@@ -20,7 +20,26 @@
       font-family: "Avenir Next", "Trebuchet MS", "Helvetica Neue", sans-serif;
     }
 
+    .reveal-viewport {
+      background: #090909;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reveal-viewport::before,
+    .reveal-viewport::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      opacity: 0;
+      filter: blur(6px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
     .reveal {
+      position: relative;
+      z-index: 1;
       font-family: "Avenir Next", "Trebuchet MS", "Helvetica Neue", sans-serif;
       color: var(--ink);
     }
@@ -33,6 +52,7 @@
       box-sizing: border-box;
       height: 100%;
       padding: 0;
+      background: transparent;
     }
 
     .slide-frame {
@@ -44,19 +64,9 @@
       height: 100%;
       padding: 42px 56px;
       overflow: hidden;
-      border-radius: 34px;
+      border-radius: 0;
       box-sizing: border-box;
       isolation: isolate;
-    }
-
-    .slide-frame::before,
-    .slide-frame::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      opacity: 0.55;
-      filter: blur(6px);
-      z-index: -1;
     }
 
     .slide-shell {
@@ -266,134 +276,174 @@
       padding: 0 0.08em;
     }
 
-    .theme-sunrise {
+    .reveal-viewport.theme-sunrise {
       background: linear-gradient(135deg, #fff4d8 0%, #ffd4a8 48%, #ff8a6c 100%);
+    }
+
+    .theme-sunrise {
       color: #21120f;
     }
 
-    .theme-sunrise .slide-frame::before {
+    .reveal-viewport.theme-sunrise::before {
       width: 42vw;
       height: 42vw;
       right: -12vw;
       top: -10vw;
       background: rgba(255, 255, 255, 0.3);
+      opacity: 0.55;
+    }
+
+    .reveal-viewport.theme-cobalt {
+      background: linear-gradient(145deg, #d9efff 0%, #88bfff 42%, #2450d3 100%);
     }
 
     .theme-cobalt {
-      background: linear-gradient(145deg, #d9efff 0%, #88bfff 42%, #2450d3 100%);
       color: #071226;
     }
 
-    .theme-cobalt .slide-frame::after {
+    .reveal-viewport.theme-cobalt::after {
       width: 30vw;
       height: 30vw;
       left: -8vw;
       bottom: -8vw;
       background: rgba(255, 255, 255, 0.2);
+      opacity: 0.55;
+    }
+
+    .reveal-viewport.theme-ember {
+      background: linear-gradient(135deg, #1f1116 0%, #682d4c 48%, #ff7b54 100%);
     }
 
     .theme-ember {
-      background: linear-gradient(135deg, #1f1116 0%, #682d4c 48%, #ff7b54 100%);
       color: #fff7ef;
     }
 
-    .theme-ember .slide-frame::before {
+    .reveal-viewport.theme-ember::before {
       width: 34vw;
       height: 34vw;
       left: -10vw;
       top: 8vh;
       background: rgba(255, 214, 169, 0.2);
+      opacity: 0.55;
+    }
+
+    .reveal-viewport.theme-forest {
+      background: linear-gradient(145deg, #f4ffe2 0%, #c1efb3 45%, #27a36a 100%);
     }
 
     .theme-forest {
-      background: linear-gradient(145deg, #f4ffe2 0%, #c1efb3 45%, #27a36a 100%);
       color: #0f2119;
     }
 
-    .theme-forest .slide-frame::after {
+    .reveal-viewport.theme-forest::after {
       width: 34vw;
       height: 34vw;
       right: -10vw;
       bottom: -12vw;
       background: rgba(255, 255, 255, 0.16);
+      opacity: 0.55;
+    }
+
+    .reveal-viewport.theme-night {
+      background: linear-gradient(140deg, #0f172a 0%, #172554 44%, #3b82f6 100%);
     }
 
     .theme-night {
-      background: linear-gradient(140deg, #0f172a 0%, #172554 44%, #3b82f6 100%);
       color: #eef5ff;
     }
 
-    .theme-night .slide-frame::before {
+    .reveal-viewport.theme-night::before {
       width: 28vw;
       height: 28vw;
       top: -8vw;
       right: 12vw;
       background: rgba(121, 173, 255, 0.26);
+      opacity: 0.55;
+    }
+
+    .reveal-viewport.theme-citrus {
+      background: linear-gradient(145deg, #f5ffd6 0%, #ffe56b 40%, #ff8f32 100%);
     }
 
     .theme-citrus {
-      background: linear-gradient(145deg, #f5ffd6 0%, #ffe56b 40%, #ff8f32 100%);
       color: #23140b;
     }
 
-    .theme-citrus .slide-frame::after {
+    .reveal-viewport.theme-citrus::after {
       width: 34vw;
       height: 34vw;
       left: -12vw;
       bottom: -12vw;
       background: rgba(255, 255, 255, 0.16);
+      opacity: 0.55;
+    }
+
+    .reveal-viewport.theme-paper {
+      background: linear-gradient(135deg, #fffdf8 0%, #f2eadf 52%, #d7cabd 100%);
     }
 
     .theme-paper {
-      background: linear-gradient(135deg, #fffdf8 0%, #f2eadf 52%, #d7cabd 100%);
       color: #17120f;
     }
 
-    .theme-paper .slide-frame::before {
+    .reveal-viewport.theme-paper::before {
       width: 30vw;
       height: 30vw;
       right: -10vw;
       top: 12vh;
       background: rgba(255, 255, 255, 0.22);
+      opacity: 0.55;
+    }
+
+    .reveal-viewport.theme-ruby {
+      background: linear-gradient(145deg, #fff1ef 0%, #ffb4aa 36%, #cc2f5d 100%);
     }
 
     .theme-ruby {
-      background: linear-gradient(145deg, #fff1ef 0%, #ffb4aa 36%, #cc2f5d 100%);
       color: #230d16;
     }
 
-    .theme-ruby .slide-frame::after {
+    .reveal-viewport.theme-ruby::after {
       width: 30vw;
       height: 30vw;
       right: -8vw;
       bottom: -8vw;
       background: rgba(255, 255, 255, 0.18);
+      opacity: 0.55;
+    }
+
+    .reveal-viewport.theme-violet {
+      background: linear-gradient(135deg, #f2ebff 0%, #c9bbff 42%, #5a54e8 100%);
     }
 
     .theme-violet {
-      background: linear-gradient(135deg, #f2ebff 0%, #c9bbff 42%, #5a54e8 100%);
       color: #140f2f;
     }
 
-    .theme-violet .slide-frame::before {
+    .reveal-viewport.theme-violet::before {
       width: 34vw;
       height: 34vw;
       left: -12vw;
       top: -10vw;
       background: rgba(255, 255, 255, 0.2);
+      opacity: 0.55;
+    }
+
+    .reveal-viewport.theme-charcoal {
+      background: linear-gradient(135deg, #111111 0%, #2b2b2b 45%, #767676 100%);
     }
 
     .theme-charcoal {
-      background: linear-gradient(135deg, #111111 0%, #2b2b2b 45%, #767676 100%);
       color: #f6f0e8;
     }
 
-    .theme-charcoal .slide-frame::after {
+    .reveal-viewport.theme-charcoal::after {
       width: 36vw;
       height: 36vw;
       right: -14vw;
       top: -10vw;
       background: rgba(255, 194, 119, 0.12);
+      opacity: 0.55;
     }
 
     .reveal .progress {
@@ -704,6 +754,30 @@
 
   <script src="./reveal/reveal.js"></script>
   <script>
+    const viewport = document.querySelector(".reveal-viewport") || document.body;
+    const themeClasses = [
+      "theme-sunrise",
+      "theme-cobalt",
+      "theme-ember",
+      "theme-forest",
+      "theme-night",
+      "theme-citrus",
+      "theme-paper",
+      "theme-ruby",
+      "theme-violet",
+      "theme-charcoal"
+    ];
+
+    function syncViewportTheme() {
+      const currentSlide = document.querySelector(".reveal .slides section.present");
+      viewport.classList.remove(...themeClasses);
+      if (!currentSlide) return;
+      const activeTheme = themeClasses.find((name) => currentSlide.classList.contains(name));
+      if (activeTheme) {
+        viewport.classList.add(activeTheme);
+      }
+    }
+
     Reveal.initialize({
       width: 1600,
       height: 900,
@@ -717,6 +791,9 @@
       backgroundTransition: "fade",
       pdfSeparateFragments: false
     });
+
+    Reveal.on("ready", syncViewportTheme);
+    Reveal.on("slidechanged", syncViewportTheme);
   </script>
 </body>
 </html>
