@@ -82,25 +82,6 @@
       align-items: center;
       gap: 34px;
     }
-
-    .deck-header,
-    .deck-footer {
-      display: none;
-    }
-
-    .theme-ember .deck-header,
-    .theme-ember .deck-footer,
-    .theme-night .deck-header,
-    .theme-night .deck-footer,
-    .theme-charcoal .deck-header,
-    .theme-charcoal .deck-footer {
-      color: rgba(255, 247, 240, 0.78);
-    }
-
-    .page-label {
-      opacity: 0.85;
-    }
-
     h1,
     h2,
     h3,
@@ -464,230 +445,106 @@
     <div class="slides">
       <section class="deck-slide theme-ember">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>ICSE Workshop Keynote</div>
-            <div class="page-label">Title</div>
-          </div>
           <div class="slide-shell hero">
             <h1>Designing at Scale:</h1>
             <h1 class="jumbo">Challenges, Pitfalls, and Lessons Learned</h1>
             <p class="lead">Maurício Aniche</p>
             <p class="supporting">CTO and co-founder at Alura</p>
           </div>
-          <div class="deck-footer">
-            <div>Design under pressure, change, and regret.</div>
-            <div>Why large-scale systems punish certainty.</div>
-          </div>
         </div>
       </section>
 
       <section class="deck-slide theme-sunrise">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>ICSE Workshop Keynote</div>
-            <div class="page-label">About me</div>
-          </div>
           <div class="slide-shell about">
             <div class="slide-shell hero">
               <h1>Maurício Aniche.</h1>
               <p class="lead">CTO and co-founder at <span class="accent">Alura</span>. Ex-{Uber, Adyen, Locaweb}. Former assistant professor in software engineering at TU Delft.</p>
-              <p class="supporting">It seems I still cannot decide which world I love more.</p>
             </div>
-          </div>
-          <div class="deck-footer">
-            <div>Reveal.js deck with speaker notes enabled</div>
-            <div>Designing for expiration, not certainty.</div>
           </div>
         </div>
       </section>
 
       <section class="deck-slide theme-cobalt">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>A belief many of us share</div>
-            <div class="page-label">Premise</div>
-          </div>
           <div class="slide-shell hero">
             <h1 class="jumbo">We love software design</h1>
             <p class="lead">and that is why we tend to think this is the most important part of software.</p>
-          </div>
-          <div class="deck-footer">
-            <div>The premise is familiar.</div>
-            <div>The rest of the talk complicates it.</div>
           </div>
         </div>
       </section>
 
       <section class="deck-slide theme-charcoal">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>What hurts most at scale</div>
-            <div class="page-label">Infrastructure and architecture</div>
-          </div>
           <div class="slide-shell hero">
             <h1>The uncomfortable truth:</h1>
             <h1 class="jumbo">at scale, the real killers are architecture, infrastructure, and data. Not code.</h1>
           </div>
-          <div class="deck-footer">
-            <div>The biggest pain is usually not the ugly method.</div>
-            <div>It is the immovable system boundary.</div>
-          </div>
         </div>
-        <aside class="notes">
-          <ul>
-            <li>Engineers love talking about code quality because code is visible and local.</li>
-            <li>But in very large systems, ugly code is often not what hurts most.</li>
-            <li>What really hurts is infrastructure and architecture that become hard to move.</li>
-            <li>Changing a cache technology.</li>
-            <li>Repartitioning a table.</li>
-            <li>Evolving storage layout.</li>
-            <li>Changing queue semantics.</li>
-            <li>Replacing a foundational dependency.</li>
-            <li>Migrating stateful systems without downtime.</li>
-          </ul>
-        </aside>
       </section>
 
       <section class="deck-slide theme-night">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>One more twist</div>
-            <div class="page-label">Agentic world</div>
-          </div>
           <div class="slide-shell split">
             <div class="slide-shell hero">
               <h1>In an agentic world, code is even less of a problem.</h1>
               <p class="supporting">Local messes get cheaper to read, patch, and reshape.</p>
             </div>
-          <div class="deck-footer">
-            <div>AI changes local code economics more than global migration economics.</div>
-            <div>Faster patching is not cheaper rewiring.</div>
           </div>
         </div>
-        <aside class="notes">
-          <p>AI lowers the cost of reading and patching ugly local code, but it does not lower the cost of migrating the wrong infrastructure or untangling the wrong architecture.</p>
-        </aside>
       </section>
-
-      <section class="deck-slide theme-ember">
-        <div class="slide-frame">
-          <div class="deck-header">
-            <div>Core thesis</div>
-            <div class="page-label">Trade-offs expire</div>
-          </div>
-          <div class="slide-shell hero">
-            <h1>Every design decision expires.</h1>
-            <p class="quote">The real question is not “What is the right architecture?” but “What pain am I choosing today, and how bad will it be when the context changes?”</p>
-          </div>
-          <div class="deck-footer">
-            <div>Trade-offs age. Assumptions expire.</div>
-            <div>Regret is part of the job.</div>
-          </div>
-        </div>
-        <aside class="notes">
-          <ul>
-            <li>In large systems, everything is a trade-off.</li>
-            <li>No design gives only benefits; every design also buys you a particular kind of pain.</li>
-            <li>The hardest part is that you do not have a crystal ball. You are deciding under uncertainty.</li>
-            <li>So the real question is not “What is the right architecture?” but “What pain am I choosing today, and how bad will it be when the context changes?”</li>
-            <li>Architectural decisions that once looked reasonable later became liabilities.</li>
-            <li>Regret is not a sign of incompetence.</li>
-            <li>Regret is the normal outcome of designing in a changing environment.</li>
-          </ul>
-        </aside>
-      </section>
-
 
       <section class="deck-slide theme-ruby">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>War story</div>
-            <div class="page-label">Uber</div>
-          </div>
           <div class="slide-shell hero">
             <div class="rule"></div>
             <h1 class="story-title">War story: caching migration at Uber</h1>
             <p class="lead">Not a story about ugly code. A story about "just" moving data between two caching technologies.</p>
           </div>
-          <div class="deck-footer">
-            <div>Story slide</div>
-            <div>Use this as the on-ramp into the migration pain.</div>
+        </div>
+      </section>
+
+
+      <section class="deck-slide theme-ember">
+        <div class="slide-frame">
+          <div class="slide-shell hero">
+            <h1>Every decision expires.</h1>
+            <p class="quote">The real question is not the 'what', but the 'when'.</p>
           </div>
         </div>
       </section>
 
       <section class="deck-slide theme-paper">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>Reframing the pain</div>
-            <div class="page-label">Survivable vs. freezing</div>
-          </div>
           <div class="slide-shell split">
             <div class="slide-shell hero">
               <h1>Bad code is unpleasant, but survivable.</h1>
               <p class="lead">Local messes can be cleaned slowly and independently.</p>
             </div>
           </div>
-          <div class="deck-footer">
-            <div>This is not “code quality does not matter.”</div>
-            <div>It is “code quality is often not the first thing that kills you.”</div>
-          </div>
         </div>
-        <aside class="notes">
-          <ul>
-            <li>At scale, code quality is often not the dominant constraint. Architecture, state, and infrastructure are usually harder to change.</li>
-            <li>Bad infrastructure or hard architectural boundaries can freeze whole organizations.</li>
-            <li>Local messes are often manageable. Global constraints are what trap you.</li>
-            <li>Not “code quality does not matter,” but rather “at scale, code quality is often not the first thing that kills you.”</li>
-          </ul>
-        </aside>
       </section>
 
       <section class="deck-slide theme-citrus">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>Large-scale evolution</div>
-            <div class="page-label">Large refactoring at scale</div>
-          </div>
           <div class="slide-shell hero">
             <h1>Refactoring at scale</h1>
             <p class="quote">Architectural refactoring is not cleanup; it is the main mechanism by which large systems evolve.</p>
           </div>
-          <div class="deck-footer">
-            <div>Migration beats cleanup as the dominant lens.</div>
-            <div>How do we change safely while production keeps moving?</div>
-          </div>
         </div>
-        <aside class="notes">
-          <ul>
-            <li>We should care less about static judgments like “this code smells” and more about dynamic questions like: how do I change this safely? how do I migrate incrementally? how do I keep the system working while replacing its internals?</li>
-          </ul>
-        </aside>
       </section>
 
       <section class="deck-slide theme-ember">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>What makes change hard</div>
-            <div class="page-label">Without stopping the world</div>
-          </div>
           <div class="slide-shell hero">
             <h1>The hard part is not seeing that something is bad.</h1>
             <h1 class="jumbo">The hard part is changing it without stopping the world.</h1>
-          </div>
-          <div class="deck-footer">
-            <div>Diagnosis is easy compared to migration.</div>
-            <div>Production keeps moving while the system changes.</div>
           </div>
         </div>
       </section>
 
       <section class="deck-slide theme-cobalt">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>Techniques that make change survivable</div>
-            <div class="page-label">Refactor safely</div>
-          </div>
           <div class="slide-shell split">
             <div class="slide-shell hero">
               <h1>Refactor safely.</h1>
@@ -700,40 +557,21 @@
                 <li class="fragment fade-up">Data migration plans</li>
               </ol>
             </div>
-            <div class="panel">
-              <p>These are not operational details. They are design tools.</p>
-            </div>
-          </div>
-          <div class="deck-footer">
-            <div>Good design includes the mechanism for being replaced.</div>
-            <div>Reversibility needs machinery, not just taste.</div>
           </div>
         </div>
       </section>
 
       <section class="deck-slide theme-night">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>Definition of good design</div>
-            <div class="page-label">Changeability under pressure</div>
-          </div>
           <div class="slide-shell hero">
             <h4>Let's talk code now</h4>
             <h1>Good large-scale code design is not static elegance; it is changeability under load, new information, and business pressure.</h1>
-          </div>
-          <div class="deck-footer">
-            <div>The system is good if it can keep moving while reality changes around it.</div>
-            <div>Mobility is a first-class design outcome.</div>
           </div>
         </div>
       </section>
 
       <section class="deck-slide theme-sunrise">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>One sacred cow</div>
-            <div class="page-label">OO is great. Really?</div>
-          </div>
           <div class="slide-shell split">
             <div class="slide-shell hero">
               <h1>OO is great. Really?</h1>
@@ -744,152 +582,66 @@
               <p class="lead">In that world, procedural code is often more direct, cheaper, and more honest.</p>
             </div>
           </div>
-          <div class="deck-footer">
-            <div>Sometimes abstraction buys clarity.</div>
-            <div>Sometimes it buys indirection before value.</div>
-          </div>
         </div>
-        <aside class="notes">
-          <ul>
-            <li>I'm biased. Two books on OO, one in Portuguese, one in English.</li>
-            <li>Many of us were trained to think that good business software naturally gravitates toward OO-heavy design.</li>
-            <li>OO is powerful when you truly need flexibility, substitution, rich domain behavior, and extension points.</li>
-            <li>But the truth is it is about: orchestrating work, moving data, calling services, handling errors, managing concurrency, enforcing workflow.</li>
-            <li>In that world, procedural code is often more direct, cheaper, and more honest. OO can add abstraction, indirection, and boilerplate before it buys real value.</li>
-            <li>In microservice-heavy systems, explicit error handling and concurrency often matter more than elegant polymorphism.</li>
-          </ul>
-        </aside>
       </section>
 
       <section class="deck-slide theme-forest">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>Counter-example</div>
-            <div class="page-label">Adyen</div>
-          </div>
           <div class="slide-shell hero">
             <div class="rule"></div>
             <h1 class="story-title">Counter-example: lack of design flexibility at Adyen</h1>
-            <p class="lead">When the steady-state design looks clean, but the migration path is missing.</p>
-          </div>
-          <div class="deck-footer">
-            <div>Story slide</div>
-            <div>Elegance without escape hatches is fragile.</div>
+            <p class="lead">When the lack of a good code abstraction can cost you money.</p>
           </div>
         </div>
       </section>
 
       <section class="deck-slide theme-ruby">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>Time to get concrete</div>
-            <div class="page-label">Practical philosophy</div>
-          </div>
           <div class="slide-shell hero">
             <h1>Let’s get concrete:</h1>
             <h1 class="jumbo">a more practical design philosophy</h1>
-          </div>
-          <div class="deck-footer">
-            <div>From critique to operating principles.</div>
-            <div>Principles for systems that will need to move.</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="deck-slide theme-paper">
-        <div class="slide-frame">
-          <div class="deck-header">
-            <div>Four orienting statements</div>
-            <div class="page-label">Manifesto</div>
-          </div>
-          <div class="slide-shell">
-            <div class="manifesto">
-              <div class="manifesto-line fragment fade-up"><span class="n">1</span><span class="t">Since design decisions age, the goal is not permanence.</span></div>
-              <div class="manifesto-line fragment fade-up"><span class="n">2</span><span class="t">Since trade-offs are unavoidable, the goal is not purity.</span></div>
-              <div class="manifesto-line fragment fade-up"><span class="n">3</span><span class="t">Do not design for change, but accept that change will come.</span></div>
-            </div>
-          </div>
-          <div class="deck-footer">
-            <div>This is the backbone for the rest of the talk.</div>
-            <div>Reversibility over righteousness.</div>
           </div>
         </div>
       </section>
 
       <section class="deck-slide theme-citrus">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>Principle 1</div>
-            <div class="page-label">Reversibility</div>
-          </div>
           <div class="slide-shell hero">
             <h1>Optimize for reversibility, not timelessness.</h1>
             <p class="lead">Get comfortable with <span class="accent">half-life designs</span>.</p>
-          </div>
-          <div class="deck-footer">
-            <div>Many good designs are intentionally temporary.</div>
-            <div>A bridge can be better than a monument.</div>
           </div>
         </div>
       </section>
 
       <section class="deck-slide theme-night">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>Principle 2</div>
-            <div class="page-label">Visible failure modes</div>
-          </div>
           <div class="slide-shell hero">
             <h1>Prefer designs whose failure modes are visible.</h1>
             <p class="lead">If something will hurt, let it hurt in a way you can detect, localize, and roll back.</p>
-          </div>
-          <div class="deck-footer">
-            <div>Opacity turns incidents into archaeology.</div>
-            <div>Observable pain is manageable pain.</div>
           </div>
         </div>
       </section>
 
       <section class="deck-slide theme-forest">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>Principle 3</div>
-            <div class="page-label">Data and infrastructure boundaries</div>
-          </div>
           <div class="slide-shell hero">
             <h1>Treat data and infrastructure as first-class.</h1>
             <p class="lead">They outlive code fashion. They are where migration cost concentrates.</p>
-          </div>
-          <div class="deck-footer">
-            <div>Most real lock-in lives at boundaries.</div>
-            <div>Data shape is architecture.</div>
           </div>
         </div>
       </section>
 
       <section class="deck-slide theme-violet">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>Principle 4</div>
-            <div class="page-label">Abstractions with evidence</div>
-          </div>
           <div class="slide-shell hero">
             <h1>Go for code abstractions only when you have evidence you need them.</h1>
             <p class="lead">Premature flexibility often turns into permanent indirection.</p>
-          </div>
-          <div class="deck-footer">
-            <div>Wait for the shape of variation to become real.</div>
-            <div>Evidence beats aesthetic symmetry.</div>
           </div>
         </div>
       </section>
 
       <section class="deck-slide theme-charcoal">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>Principle 6</div>
-            <div class="page-label">Migration path</div>
-          </div>
           <div class="slide-shell hero">
             <h1>Take the simplest path and do not overengineer.</h1>
             <p class="lead">The future will prove you wrong 100% of the time.</p>
@@ -897,36 +649,17 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-cobalt">
+      <section class="deck-slide theme-citrus">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>Clarification</div>
-            <div class="page-label">Against certainty</div>
-          </div>
           <div class="slide-shell hero">
-            <h1>This is not a talk against architecture.</h1>
-            <h1 class="jumbo">It is a talk against architectural certainty.</h1>
-          </div>
-          <div class="deck-footer">
-            <div>Managing uncertainty beats pretending it is gone.</div>
-            <div>Leave systems that can still be moved.</div>
+            <h1>Be ready to refactor.</h1>
+            <p class="lead">not too soon but not too late.</p>
           </div>
         </div>
-        <aside class="notes">
-          <ul>
-            <li>Large-scale design is an exercise in managing uncertainty, not defeating it.</li>
-            <li>The best engineers are not the ones who always pick the perfect design.</li>
-            <li>They are the ones who understand the trade-offs, recognize when assumptions have expired, and leave systems that can still be moved.</li>
-          </ul>
-        </aside>
       </section>
 
       <section class="deck-slide theme-sunrise">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>What is in it for research</div>
-            <div class="page-label">Research agenda</div>
-          </div>
           <div class="slide-shell split">
             <div class="slide-shell hero">
               <h1>What’s in it for you, researchers?</h1>
@@ -938,39 +671,20 @@
                 <li class="fragment fade-up">How decisions age as organizations and traffic evolve</li>
               </ol>
             </div>
-            <div class="panel">
-              <p>There is a rich research agenda in the systems that cannot stop moving.</p>
-            </div>
-          </div>
-          <div class="deck-footer">
-            <div>Shift attention from judging artifacts to studying evolvability.</div>
-            <div>There is plenty left to discover beyond local code quality.</div>
           </div>
         </div>
       </section>
 
       <section class="deck-slide theme-ember">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>Friendly provocation</div>
-            <div class="page-label">Fieldwork</div>
-          </div>
           <div class="slide-shell hero">
             <h1>Get away from the coziness of your research lab :)</h1>
-          </div>
-          <div class="deck-footer">
-            <div>Talk to the teams living inside production constraints.</div>
-            <div>The most interesting questions are often in the operational mess.</div>
           </div>
         </div>
       </section>
 
       <section class="deck-slide theme-paper">
         <div class="slide-frame">
-          <div class="deck-header">
-            <div>Summary</div>
-            <div class="page-label">Closing</div>
-          </div>
           <div class="slide-shell split">
             <div class="slide-shell hero">
               <h1>A summary</h1>
@@ -978,17 +692,10 @@
                 <li class="fragment fade-up">Every design decision is a trade-off under uncertainty.</li>
                 <li class="fragment fade-up">At scale, architecture and infrastructure hurt more than code ugliness.</li>
                 <li class="fragment fade-up">Refactoring and migration are the core large-scale design skills.</li>
-                <li class="fragment fade-up">Our abstractions should match the real shape of the work, not our ideology.</li>
-                <li class="fragment fade-up">The goal is not perfect design, but reversible and survivable design.</li>
+                <li class="fragment fade-up">Our abstractions should match the real shape of the work, simplicity is key.</li>
+                <li class="fragment fade-up">The goal is not perfect design, but refactor at scale.</li>
               </ul>
             </div>
-            <div class="panel">
-              <p class="lead">Design for the day your assumptions stop being true.</p>
-            </div>
-          </div>
-          <div class="deck-footer">
-            <div>Thank the audience and open the floor.</div>
-            <div>End on reversibility, not perfection.</div>
           </div>
         </div>
       </section>
@@ -996,7 +703,6 @@
   </div>
 
   <script src="./reveal/reveal.js"></script>
-  <script src="./reveal/plugin/notes.js"></script>
   <script>
     Reveal.initialize({
       width: 1600,
@@ -1009,8 +715,7 @@
       center: false,
       transition: "slide",
       backgroundTransition: "fade",
-      pdfSeparateFragments: false,
-      plugins: [ RevealNotes ]
+      pdfSeparateFragments: false
     });
   </script>
 </body>
