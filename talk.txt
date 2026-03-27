@@ -62,6 +62,15 @@ Slide 7: good large-scale design is not static elegance; it is changeability und
 
 Slide 8: OO is great. Really?
 
+Slide 8.5: Real code challenges.
+
+* orchestrating work
+* moving data
+* calling services
+* handling errors
+* managing concurrency
+* enforcing workflow
+
 Before slide 9, a slide to tell a story, "Counter-example: Lack of design flexibility at Adyen"
 
 Personal notes:
