@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICSE Keynote - Reveal.js Deck</title>
+  <link rel="stylesheet" href="./reveal/reset.css">
+  <link rel="stylesheet" href="./reveal/reveal.css">
+  <style>
+    :root {
+      --ink: #141414;
+      --light-ink: rgba(20, 20, 20, 0.7);
+      --paper: #fff9f0;
+      --shadow: 0 26px 60px rgba(0, 0, 0, 0.18);
+    }
+
+    html,
+    body {
+      background: #090909;
+      font-family: "Avenir Next", "Trebuchet MS", "Helvetica Neue", sans-serif;
+    }
+
+    .reveal {
+      font-family: "Avenir Next", "Trebuchet MS", "Helvetica Neue", sans-serif;
+      color: var(--ink);
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section.deck-slide {
+      box-sizing: border-box;
+      height: 100%;
+      padding: 0;
+    }
+
+    .slide-frame {
+      position: relative;
+      display: grid;
+      grid-template-rows: 1fr;
+      gap: 24px;
+      width: 100%;
+      height: 100%;
+      padding: 42px 56px;
+      overflow: hidden;
+      border-radius: 34px;
+      box-sizing: border-box;
+      isolation: isolate;
+    }
+
+    .slide-frame::before,
+    .slide-frame::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      opacity: 0.55;
+      filter: blur(6px);
+      z-index: -1;
+    }
+
+    .slide-shell {
+      display: grid;
+      align-content: center;
+      gap: 24px;
+      min-height: 0;
+    }
+
+    .slide-shell.hero {
+      max-width: 1180px;
+    }
+
+    .slide-shell.split {
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      align-items: center;
+      gap: 34px;
+      max-width: none;
+    }
+
+    .slide-shell.about {
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.82fr);
+      align-items: center;
+      gap: 34px;
+    }
+
+    .deck-header,
+    .deck-footer {
+      display: none;
+    }
+
+    .theme-ember .deck-header,
+    .theme-ember .deck-footer,
+    .theme-night .deck-header,
+    .theme-night .deck-footer,
+    .theme-charcoal .deck-header,
+    .theme-charcoal .deck-footer {
+      color: rgba(255, 247, 240, 0.78);
+    }
+
+    .page-label {
+      opacity: 0.85;
+    }
+
+    h1,
+    h2,
+    h3,
+    .reveal h1,
+    .reveal h2,
+    .reveal h3 {
+      margin: 0;
+      font-family: "Baskerville", "Palatino Linotype", "Book Antiqua", serif;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      text-transform: none;
+    }
+
+    .reveal h1 {
+      font-size: 4.35rem;
+    }
+
+    .jumbo {
+      font-size: 5.8rem;
+      line-height: 0.92;
+    }
+
+    .story-title {
+      font-size: 5.2rem;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      font-size: 2.2rem;
+      line-height: 1.12;
+      margin: 0;
+      max-width: 1180px;
+    }
+
+    .quote {
+      font-size: 2.55rem;
+      line-height: 1.12;
+      font-weight: 700;
+      margin: 0;
+      max-width: 1120px;
+    }
+
+    .supporting {
+      margin: 0;
+      font-size: 1.55rem;
+      line-height: 1.2;
+      color: rgba(20, 20, 20, 0.78);
+      max-width: 1060px;
+    }
+
+    .theme-ember .supporting,
+    .theme-night .supporting,
+    .theme-charcoal .supporting {
+      color: rgba(255, 247, 240, 0.8);
+    }
+
+    .tag {
+      display: inline-flex;
+      width: fit-content;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.28);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .panel {
+      padding: 26px 28px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .panel.dark {
+      background: rgba(0, 0, 0, 0.14);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .panel p {
+      margin: 0;
+      font-size: 1.35rem;
+      line-height: 1.22;
+    }
+
+    .panel p + p {
+      margin-top: 14px;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .mini-card-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 1160px;
+    }
+
+    .mini-card,
+    .stat,
+    .manifesto-line {
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.17);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+    }
+
+    .mini-card {
+      font-size: 1.18rem;
+      line-height: 1.18;
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.38rem;
+      line-height: 1;
+    }
+
+    .manifesto {
+      display: grid;
+      gap: 16px;
+      max-width: 1180px;
+    }
+
+    .manifesto-line {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .manifesto-line .n {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .manifesto-line .t {
+      font-size: 1.58rem;
+      line-height: 1.14;
+    }
+
+    .reveal ul,
+    .reveal ol {
+      display: block;
+      margin: 0;
+      padding-left: 1.15em;
+      font-size: 1.62rem;
+      line-height: 1.18;
+    }
+
+    .reveal li + li {
+      margin-top: 12px;
+    }
+
+    .tight li + li {
+      margin-top: 9px;
+    }
+
+    .rule {
+      height: 6px;
+      width: 220px;
+      border-radius: 999px;
+      background: currentColor;
+      opacity: 0.22;
+    }
+
+    .accent {
+      background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.58));
+      background-repeat: no-repeat;
+      background-size: 100% 0.34em;
+      background-position: 0 90%;
+      padding: 0 0.08em;
+    }
+
+    .theme-sunrise {
+      background: linear-gradient(135deg, #fff4d8 0%, #ffd4a8 48%, #ff8a6c 100%);
+      color: #21120f;
+    }
+
+    .theme-sunrise .slide-frame::before {
+      width: 42vw;
+      height: 42vw;
+      right: -12vw;
+      top: -10vw;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .theme-cobalt {
+      background: linear-gradient(145deg, #d9efff 0%, #88bfff 42%, #2450d3 100%);
+      color: #071226;
+    }
+
+    .theme-cobalt .slide-frame::after {
+      width: 30vw;
+      height: 30vw;
+      left: -8vw;
+      bottom: -8vw;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .theme-ember {
+      background: linear-gradient(135deg, #1f1116 0%, #682d4c 48%, #ff7b54 100%);
+      color: #fff7ef;
+    }
+
+    .theme-ember .slide-frame::before {
+      width: 34vw;
+      height: 34vw;
+      left: -10vw;
+      top: 8vh;
+      background: rgba(255, 214, 169, 0.2);
+    }
+
+    .theme-forest {
+      background: linear-gradient(145deg, #f4ffe2 0%, #c1efb3 45%, #27a36a 100%);
+      color: #0f2119;
+    }
+
+    .theme-forest .slide-frame::after {
+      width: 34vw;
+      height: 34vw;
+      right: -10vw;
+      bottom: -12vw;
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .theme-night {
+      background: linear-gradient(140deg, #0f172a 0%, #172554 44%, #3b82f6 100%);
+      color: #eef5ff;
+    }
+
+    .theme-night .slide-frame::before {
+      width: 28vw;
+      height: 28vw;
+      top: -8vw;
+      right: 12vw;
+      background: rgba(121, 173, 255, 0.26);
+    }
+
+    .theme-citrus {
+      background: linear-gradient(145deg, #f5ffd6 0%, #ffe56b 40%, #ff8f32 100%);
+      color: #23140b;
+    }
+
+    .theme-citrus .slide-frame::after {
+      width: 34vw;
+      height: 34vw;
+      left: -12vw;
+      bottom: -12vw;
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .theme-paper {
+      background: linear-gradient(135deg, #fffdf8 0%, #f2eadf 52%, #d7cabd 100%);
+      color: #17120f;
+    }
+
+    .theme-paper .slide-frame::before {
+      width: 30vw;
+      height: 30vw;
+      right: -10vw;
+      top: 12vh;
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .theme-ruby {
+      background: linear-gradient(145deg, #fff1ef 0%, #ffb4aa 36%, #cc2f5d 100%);
+      color: #230d16;
+    }
+
+    .theme-ruby .slide-frame::after {
+      width: 30vw;
+      height: 30vw;
+      right: -8vw;
+      bottom: -8vw;
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .theme-violet {
+      background: linear-gradient(135deg, #f2ebff 0%, #c9bbff 42%, #5a54e8 100%);
+      color: #140f2f;
+    }
+
+    .theme-violet .slide-frame::before {
+      width: 34vw;
+      height: 34vw;
+      left: -12vw;
+      top: -10vw;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .theme-charcoal {
+      background: linear-gradient(135deg, #111111 0%, #2b2b2b 45%, #767676 100%);
+      color: #f6f0e8;
+    }
+
+    .theme-charcoal .slide-frame::after {
+      width: 36vw;
+      height: 36vw;
+      right: -14vw;
+      top: -10vw;
+      background: rgba(255, 194, 119, 0.12);
+    }
+
+    .reveal .progress {
+      color: rgba(255, 255, 255, 0.82);
+      height: 8px;
+    }
+
+    .reveal .slide-number {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      color: #fff;
+    }
+
+    .reveal .controls {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    @media (max-width: 1100px) {
+      .slide-frame {
+        padding: 28px 34px;
+      }
+
+      .slide-shell.split,
+      .slide-shell.about,
+      .grid-two,
+      .mini-card-row {
+        grid-template-columns: 1fr;
+      }
+
+      .jumbo,
+      .story-title {
+        font-size: 4.2rem;
+      }
+
+      .reveal h1 {
+        font-size: 3.55rem;
+      }
+
+      .quote {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section class="deck-slide theme-ember">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>ICSE Workshop Keynote</div>
+            <div class="page-label">Title</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>Designing at Scale:</h1>
+            <h1 class="jumbo">Challenges, Pitfalls, and Lessons Learned</h1>
+            <p class="lead">Maurício Aniche</p>
+            <p class="supporting">CTO and co-founder at Alura</p>
+          </div>
+          <div class="deck-footer">
+            <div>Design under pressure, change, and regret.</div>
+            <div>Why large-scale systems punish certainty.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-sunrise">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>ICSE Workshop Keynote</div>
+            <div class="page-label">About me</div>
+          </div>
+          <div class="slide-shell about">
+            <div class="slide-shell hero">
+              <h1>Maurício Aniche.</h1>
+              <p class="lead">CTO and co-founder at <span class="accent">Alura</span>. Ex-{Uber, Adyen, Locaweb}. Former assistant professor in software engineering at TU Delft.</p>
+              <p class="supporting">It seems I still cannot decide which world I love more.</p>
+            </div>
+          </div>
+          <div class="deck-footer">
+            <div>Reveal.js deck with speaker notes enabled</div>
+            <div>Designing for expiration, not certainty.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-cobalt">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>A belief many of us share</div>
+            <div class="page-label">Premise</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1 class="jumbo">We love software design</h1>
+            <p class="lead">and that is why we tend to think this is the most important part of software.</p>
+          </div>
+          <div class="deck-footer">
+            <div>The premise is familiar.</div>
+            <div>The rest of the talk complicates it.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-ember">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Core thesis</div>
+            <div class="page-label">Trade-offs expire</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>Every design decision expires.</h1>
+            <p class="quote">The real question is not “What is the right architecture?” but “What pain am I choosing today, and how bad will it be when the context changes?”</p>
+          </div>
+          <div class="deck-footer">
+            <div>Trade-offs age. Assumptions expire.</div>
+            <div>Regret is part of the job.</div>
+          </div>
+        </div>
+        <aside class="notes">
+          <ul>
+            <li>In large systems, everything is a trade-off.</li>
+            <li>No design gives only benefits; every design also buys you a particular kind of pain.</li>
+            <li>The hardest part is that you do not have a crystal ball. You are deciding under uncertainty.</li>
+            <li>So the real question is not “What is the right architecture?” but “What pain am I choosing today, and how bad will it be when the context changes?”</li>
+            <li>Architectural decisions that once looked reasonable later became liabilities.</li>
+            <li>Regret is not a sign of incompetence.</li>
+            <li>Regret is the normal outcome of designing in a changing environment.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="deck-slide theme-charcoal">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>What hurts most at scale</div>
+            <div class="page-label">Infrastructure and architecture</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>The uncomfortable truth:</h1>
+            <h1 class="jumbo">at scale, the real killers are architecture, infrastructure, and data. Not code.</h1>
+          </div>
+          <div class="deck-footer">
+            <div>The biggest pain is usually not the ugly method.</div>
+            <div>It is the immovable system boundary.</div>
+          </div>
+        </div>
+        <aside class="notes">
+          <ul>
+            <li>Engineers love talking about code quality because code is visible and local.</li>
+            <li>But in very large systems, ugly code is often not what hurts most.</li>
+            <li>What really hurts is infrastructure and architecture that become hard to move.</li>
+            <li>Changing a cache technology.</li>
+            <li>Repartitioning a table.</li>
+            <li>Evolving storage layout.</li>
+            <li>Changing queue semantics.</li>
+            <li>Replacing a foundational dependency.</li>
+            <li>Migrating stateful systems without downtime.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="deck-slide theme-night">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>One more twist</div>
+            <div class="page-label">Agentic world</div>
+          </div>
+          <div class="slide-shell split">
+            <div class="slide-shell hero">
+              <h1>In an agentic world, code is even less of a problem.</h1>
+              <p class="supporting">Local messes get cheaper to read, patch, and reshape.</p>
+            </div>
+          <div class="deck-footer">
+            <div>AI changes local code economics more than global migration economics.</div>
+            <div>Faster patching is not cheaper rewiring.</div>
+          </div>
+        </div>
+        <aside class="notes">
+          <p>AI lowers the cost of reading and patching ugly local code, but it does not lower the cost of migrating the wrong infrastructure or untangling the wrong architecture.</p>
+        </aside>
+      </section>
+
+      <section class="deck-slide theme-ruby">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>War story</div>
+            <div class="page-label">Uber</div>
+          </div>
+          <div class="slide-shell hero">
+            <div class="rule"></div>
+            <h1 class="story-title">War story: caching migration at Uber</h1>
+            <p class="lead">Not a story about ugly code. A story about "just" moving data between two caching technologies.</p>
+          </div>
+          <div class="deck-footer">
+            <div>Story slide</div>
+            <div>Use this as the on-ramp into the migration pain.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-paper">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Reframing the pain</div>
+            <div class="page-label">Survivable vs. freezing</div>
+          </div>
+          <div class="slide-shell split">
+            <div class="slide-shell hero">
+              <h1>Bad code is unpleasant, but survivable.</h1>
+              <p class="lead">Local messes can be cleaned slowly and independently. Global constraints can freeze whole organizations.</p>
+            </div>
+          </div>
+          <div class="deck-footer">
+            <div>This is not “code quality does not matter.”</div>
+            <div>It is “code quality is often not the first thing that kills you.”</div>
+          </div>
+        </div>
+        <aside class="notes">
+          <ul>
+            <li>At scale, code quality is often not the dominant constraint. Architecture, state, and infrastructure are usually harder to change.</li>
+            <li>Bad infrastructure or hard architectural boundaries can freeze whole organizations.</li>
+            <li>Local messes are often manageable. Global constraints are what trap you.</li>
+            <li>Not “code quality does not matter,” but rather “at scale, code quality is often not the first thing that kills you.”</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="deck-slide theme-citrus">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Large-scale evolution</div>
+            <div class="page-label">Large refactoring at scale</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>Refactoring at scale</h1>
+            <p class="quote">Architectural refactoring is not cleanup; it is the main mechanism by which large systems evolve.</p>
+            <p class="supporting">The hard part is not seeing that something is bad. The hard part is changing it without stopping the world.</p>
+          </div>
+          <div class="deck-footer">
+            <div>Migration beats cleanup as the dominant lens.</div>
+            <div>How do we change safely while production keeps moving?</div>
+          </div>
+        </div>
+        <aside class="notes">
+          <ul>
+            <li>We should care less about static judgments like “this code smells” and more about dynamic questions like: how do I change this safely? how do I migrate incrementally? how do I keep the system working while replacing its internals?</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="deck-slide theme-cobalt">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Techniques that make change survivable</div>
+            <div class="page-label">Refactor safely</div>
+          </div>
+          <div class="slide-shell split">
+            <div class="slide-shell hero">
+              <h1>Refactor safely.</h1>
+              <ol class="tight">
+                <li class="fragment fade-up">Feature flags</li>
+                <li class="fragment fade-up">Shadow traffic</li>
+                <li class="fragment fade-up">Dual reads and writes</li>
+                <li class="fragment fade-up">Rolling upgrades</li>
+                <li class="fragment fade-up">Backward-compatible APIs</li>
+                <li class="fragment fade-up">Data migration plans</li>
+              </ol>
+            </div>
+            <div class="panel">
+              <p>These are not operational details. They are design tools.</p>
+            </div>
+          </div>
+          <div class="deck-footer">
+            <div>Good design includes the mechanism for being replaced.</div>
+            <div>Reversibility needs machinery, not just taste.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-night">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Definition of good design</div>
+            <div class="page-label">Changeability under pressure</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>Good large-scale design is not static elegance;</h1>
+            <h1 class="jumbo">it is changeability under load, new information, and business pressure.</h1>
+          </div>
+          <div class="deck-footer">
+            <div>The system is good if it can keep moving while reality changes around it.</div>
+            <div>Mobility is a first-class design outcome.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-sunrise">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>One sacred cow</div>
+            <div class="page-label">OO is great. Really?</div>
+          </div>
+          <div class="slide-shell split">
+            <div class="slide-shell hero">
+              <h1>OO is great. Really?</h1>
+              <p class="supporting">OO is powerful when you truly need substitution, rich behavior, extension points, and domain flexibility.</p>
+              <p class="supporting">But a lot of business software is mostly orchestrating work, moving data, calling services, handling errors, managing concurrency, and enforcing workflow.</p>
+            </div>
+            <div class="panel">
+              <p class="lead">In that world, procedural code is often more direct, cheaper, and more honest.</p>
+            </div>
+          </div>
+          <div class="deck-footer">
+            <div>Sometimes abstraction buys clarity.</div>
+            <div>Sometimes it buys indirection before value.</div>
+          </div>
+        </div>
+        <aside class="notes">
+          <ul>
+            <li>I'm biased. Two books on OO, one in Portuguese, one in English.</li>
+            <li>Many of us were trained to think that good business software naturally gravitates toward OO-heavy design.</li>
+            <li>OO is powerful when you truly need flexibility, substitution, rich domain behavior, and extension points.</li>
+            <li>But the truth is it is about: orchestrating work, moving data, calling services, handling errors, managing concurrency, enforcing workflow.</li>
+            <li>In that world, procedural code is often more direct, cheaper, and more honest. OO can add abstraction, indirection, and boilerplate before it buys real value.</li>
+            <li>In microservice-heavy systems, explicit error handling and concurrency often matter more than elegant polymorphism.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="deck-slide theme-forest">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Counter-example</div>
+            <div class="page-label">Adyen</div>
+          </div>
+          <div class="slide-shell hero">
+            <div class="rule"></div>
+            <h1 class="story-title">Counter-example: lack of design flexibility at Adyen</h1>
+            <p class="lead">When the steady-state design looks clean, but the migration path is missing.</p>
+          </div>
+          <div class="deck-footer">
+            <div>Story slide</div>
+            <div>Elegance without escape hatches is fragile.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-ruby">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Time to get concrete</div>
+            <div class="page-label">Practical philosophy</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>Let’s get concrete:</h1>
+            <h1 class="jumbo">a more practical design philosophy</h1>
+          </div>
+          <div class="deck-footer">
+            <div>From critique to operating principles.</div>
+            <div>Principles for systems that will need to move.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-paper">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Four orienting statements</div>
+            <div class="page-label">Manifesto</div>
+          </div>
+          <div class="slide-shell">
+            <div class="manifesto">
+              <div class="manifesto-line fragment fade-up"><span class="n">1</span><span class="t">Since design decisions age, the goal is not permanence.</span></div>
+              <div class="manifesto-line fragment fade-up"><span class="n">2</span><span class="t">Since trade-offs are unavoidable, the goal is not purity.</span></div>
+              <div class="manifesto-line fragment fade-up"><span class="n">3</span><span class="t">Since systems change, the goal is not elegance alone.</span></div>
+              <div class="manifesto-line fragment fade-up"><span class="n">4</span><span class="t">The real goal is to make future change less catastrophic.</span></div>
+            </div>
+          </div>
+          <div class="deck-footer">
+            <div>This is the backbone for the rest of the talk.</div>
+            <div>Reversibility over righteousness.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-citrus">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Principle 1</div>
+            <div class="page-label">Reversibility</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>Optimize for reversibility, not timelessness.</h1>
+            <p class="lead">Get comfortable with <span class="accent">half-live designs</span>.</p>
+          </div>
+          <div class="deck-footer">
+            <div>Many good designs are intentionally temporary.</div>
+            <div>A bridge can be better than a monument.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-night">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Principle 2</div>
+            <div class="page-label">Visible failure modes</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>Prefer designs whose failure modes are visible.</h1>
+            <p class="lead">If something will hurt, let it hurt in a way you can detect, localize, and roll back.</p>
+          </div>
+          <div class="deck-footer">
+            <div>Opacity turns incidents into archaeology.</div>
+            <div>Observable pain is manageable pain.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-forest">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Principle 3</div>
+            <div class="page-label">Data and infrastructure boundaries</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>Treat data and infrastructure boundaries as first-class.</h1>
+            <p class="lead">They outlive code fashion. They are where migration cost concentrates.</p>
+          </div>
+          <div class="deck-footer">
+            <div>Most real lock-in lives at boundaries.</div>
+            <div>Data shape is architecture.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-violet">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Principle 4</div>
+            <div class="page-label">Abstractions with evidence</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>Choose abstractions only when you have evidence you need them.</h1>
+            <p class="lead">Premature flexibility often turns into permanent indirection.</p>
+          </div>
+          <div class="deck-footer">
+            <div>Wait for the shape of variation to become real.</div>
+            <div>Evidence beats aesthetic symmetry.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-ruby">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Principle 5</div>
+            <div class="page-label">Optimization ages</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>Accept that today’s optimization may become tomorrow’s bottleneck.</h1>
+            <p class="lead">The shortcut that saves you now can later trap growth, load patterns, or organization structure.</p>
+          </div>
+          <div class="deck-footer">
+            <div>Success changes the shape of the system.</div>
+            <div>Scale turns strengths into liabilities.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-charcoal">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Principle 6</div>
+            <div class="page-label">Migration path</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>Design with the migration path in mind, not just the steady state.</h1>
+            <p class="lead">The replacement strategy is part of the design.</p>
+          </div>
+          <div class="deck-footer">
+            <div>If you cannot explain how to evolve it, you do not fully understand it.</div>
+            <div>Steady state is only one phase of the system.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-cobalt">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Clarification</div>
+            <div class="page-label">Against certainty</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>This is not a talk against architecture.</h1>
+            <h1 class="jumbo">It is a talk against architectural certainty.</h1>
+          </div>
+          <div class="deck-footer">
+            <div>Managing uncertainty beats pretending it is gone.</div>
+            <div>Leave systems that can still be moved.</div>
+          </div>
+        </div>
+        <aside class="notes">
+          <ul>
+            <li>Large-scale design is an exercise in managing uncertainty, not defeating it.</li>
+            <li>The best engineers are not the ones who always pick the perfect design.</li>
+            <li>They are the ones who understand the trade-offs, recognize when assumptions have expired, and leave systems that can still be moved.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="deck-slide theme-sunrise">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>What is in it for research</div>
+            <div class="page-label">Research agenda</div>
+          </div>
+          <div class="slide-shell split">
+            <div class="slide-shell hero">
+              <h1>What’s in it for you, researchers?</h1>
+              <ol class="tight">
+                <li class="fragment fade-up">Forget code smells :-)</li>
+                <li class="fragment fade-up">Architectural reversibility</li>
+                <li class="fragment fade-up">Infrastructure migration patterns</li>
+                <li class="fragment fade-up">Large-scale refactoring strategies</li>
+                <li class="fragment fade-up">How decisions age as organizations and traffic evolve</li>
+              </ol>
+            </div>
+            <div class="panel">
+              <p>There is a rich research agenda in the systems that cannot stop moving.</p>
+            </div>
+          </div>
+          <div class="deck-footer">
+            <div>Shift attention from judging artifacts to studying evolvability.</div>
+            <div>There is plenty left to discover beyond local code quality.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-ember">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Friendly provocation</div>
+            <div class="page-label">Fieldwork</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>Get away from the coziness of your research lab :)</h1>
+          </div>
+          <div class="deck-footer">
+            <div>Talk to the teams living inside production constraints.</div>
+            <div>The most interesting questions are often in the operational mess.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-paper">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Summary</div>
+            <div class="page-label">Closing</div>
+          </div>
+          <div class="slide-shell split">
+            <div class="slide-shell hero">
+              <h1>A summary</h1>
+              <ul class="tight">
+                <li class="fragment fade-up">Every design decision is a trade-off under uncertainty.</li>
+                <li class="fragment fade-up">At scale, architecture and infrastructure hurt more than code ugliness.</li>
+                <li class="fragment fade-up">Refactoring and migration are the core large-scale design skills.</li>
+                <li class="fragment fade-up">Our abstractions should match the real shape of the work, not our ideology.</li>
+                <li class="fragment fade-up">The goal is not perfect design, but reversible and survivable design.</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <p class="lead">Design for the day your assumptions stop being true.</p>
+            </div>
+          </div>
+          <div class="deck-footer">
+            <div>Thank the audience and open the floor.</div>
+            <div>End on reversibility, not perfection.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="./reveal/reveal.js"></script>
+  <script src="./reveal/plugin/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1600,
+      height: 900,
+      margin: 0.04,
+      hash: true,
+      slideNumber: "c/t",
+      controls: true,
+      progress: true,
+      center: false,
+      transition: "slide",
+      backgroundTransition: "fade",
+      pdfSeparateFragments: false,
+      plugins: [ RevealNotes ]
+    });
+  </script>
+</body>
+</html>

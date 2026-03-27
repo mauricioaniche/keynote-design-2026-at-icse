@@ -1,0 +1,107 @@
+I need to build slides for my keynote at a workshop co-located with ICSE. I tend to colorful like slides with a combination of big and small fonts to draw attention. Below, I describe every slide I need. I also have my personal notes for some of the slides, which I'd like to generate a second deck so that I can print and have it with me during the talk.
+
+Opening title slide: "Designing at Scale: Challenges, Pitfalls, and Lessons Learned". Maurício Aniche, CTO and co-founder at Alura.
+
+Slide 0: About me. Mauricio, CTO at Alura. Former Uber and Adyen. Former assistant professor in SE. For Alura co-founder. It seems I can't decide if I love academia or industry more.
+
+Slide 1: In big fonts, "We love software design", and in smaller fonts, "and that's why we tend to think this is the most important part of software"
+
+Slide 2: Big font "Every design decision expires". The real question is not “What is the right architecture?” but “What pain am I choosing today, and how bad will it be when the context changes?”
+
+Personal notes:
+
+* In large systems, everything is a trade-off.
+* No design gives only benefits; every design also buys you a particular kind of pain.
+* The hardest part is that you do not have a crystal ball. You are deciding under uncertainty.
+* So the real question is not “What is the right architecture?” but “What pain am I choosing today, and how bad will it be when the context changes?”
+* architectural decisions that once looked reasonable later became liabilities,
+* regret is not a sign of incompetence,
+* regret is the normal outcome of designing in a changing environment.
+
+
+Slide 3: Big font: The unconfortable truth: "at scale, the real killers are architecture and infrastructure".
+
+Personal notes:
+
+* Engineers love talking about code quality because code is visible and local.
+* But in very large systems, ugly code is often not what hurts most.
+* What really hurts is infrastructure and architecture that become hard to move:
+* changing a cache technology,
+* repartitioning a table,
+* evolving storage layout,
+* changing queue semantics,
+* replacing a foundational dependency,
+* migrating stateful systems without downtime.
+
+Slide 3.5: "In an agentic world, this is even less of a problem".
+
+Personal notes: 
+
+* “AI lowers the cost of reading and patching ugly local code, but it does not lower the cost of migrating the wrong infrastructure or untangling the wrong architecture.”
+
+Before slide 4, let's add two slides where I'll tell them about some war stories about caching migration at Uber (title of the slide)
+
+Slide 4: Bad code is unpleasant, but survivable.
+
+Personal notes:
+
+* At scale, code quality is often not the dominant constraint. Architecture, state, and infrastructure are usually harder to change.
+* Bad infrastructure or hard architectural boundaries can freeze whole organizations.
+* local messes are often manageable, global constraints are what trap you.
+* not “code quality does not matter,” but rather “at scale, code quality is often not the first thing that kills you.”
+
+Slide 5: Refactoring at scale. Refactoring is not cleanup, refactoring is the main mechanism by which large systems evolve.
+
+* That means we should care less about static judgments like “this code smells” and more about dynamic questions like: how do I change this safely? how do I migrate incrementally? how do I keep the system working while replacing its internals? 
+* The hard part is not seeing that something is bad. The hard part is changing it without stopping the world.
+
+Slide 6: Refactor safely. Bullet point with feature flags, shadow traffic, dual reads and writes, rolling upgrades, backward-compatible APIs, data migration plans
+
+Slide 7: good large-scale design is not static elegance; it is changeability under load and under business pressure.
+
+
+Slide 8: OO is great. Really?
+
+Before slide 9, a slide to tell a story, "Counter-example: Lack of design flexibility at Adyen"
+
+Personal notes:
+
+* I'm biased. Two books on OO, one in portuguese, one in english
+* Many of us were trained to think that good business software naturally gravitates toward OO-heavy design.
+* OO is powerful when you truly need flexibility, substitution, rich domain behavior, and extension points.
+* But the truth is it is about: orchestrating work, moving data, calling services, handling errors, managing concurrency, enforcing workflow.
+* In that world, procedural code is often more direct, cheaper, and more honest. OO can add abstraction, indirection, and boilerplate before it buys real value.
+* In microservice-heavy systems, explicit error handling and concurrency often matter more than elegant polymorphism.
+
+Slide 9: Let's get concrete: A more practical design philosophy
+
+Slide 10: bullet point 1/ Since design decisions age, the goal is not permanence., 2/ Since trade-offs are unavoidable, the goal is not purity., 3/ Since systems change, the goal is not elegance alone., 4/ The real goal is to make future change less catastrophic.
+
+Slide 11, 12, 13, 14, 15, 16: one for each point below
+
+* optimize for reversibility, not timelessness; get comfortable with "half-live designs".
+* prefer designs whose failure modes are visible;
+* treat data and infrastructure boundaries as first-class;
+* choose abstractions only when you have evidence you need them;
+* accept that today’s optimization may become tomorrow’s bottleneck;
+* design with the migration path in mind, not just the steady state.
+
+Slide 17: This is not a talk against architecture. It is a talk against architectural certainty.
+
+Personal notes: 
+
+* Large-scale design is an exercise in managing uncertainty, not defeating it.
+* The best engineers are not the ones who always pick the perfect design.
+* They are the ones who understand the trade-offs, recognize when assumptions have expired, and leave systems that can still be moved.
+
+Slide 18: What's in it for you, researchers? Bullet points: 1/ Forget code smells, 2/ architectural reversibility, 3/ infrastructure migration patterns, 4/ large-scale refactoring strategies,, 5/ how decisions age as organizations and traffic evolve.
+
+Slide 19: Get away from the cozyness of your research lab :)
+
+Slide 20: A summary
+
+* Every design decision is a trade-off under uncertainty
+* At scale, architecture and infrastructure hurt more than code ugliness
+* Refactoring and migration are the core large-scale design skills
+* Our abstractions should match the real shape of the work, not our ideology
+* The goal is not perfect design, but reversible and survivable design
