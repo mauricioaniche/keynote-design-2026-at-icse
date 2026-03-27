@@ -518,34 +518,6 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-ember">
-        <div class="slide-frame">
-          <div class="deck-header">
-            <div>Core thesis</div>
-            <div class="page-label">Trade-offs expire</div>
-          </div>
-          <div class="slide-shell hero">
-            <h1>Every design decision expires.</h1>
-            <p class="quote">The real question is not “What is the right architecture?” but “What pain am I choosing today, and how bad will it be when the context changes?”</p>
-          </div>
-          <div class="deck-footer">
-            <div>Trade-offs age. Assumptions expire.</div>
-            <div>Regret is part of the job.</div>
-          </div>
-        </div>
-        <aside class="notes">
-          <ul>
-            <li>In large systems, everything is a trade-off.</li>
-            <li>No design gives only benefits; every design also buys you a particular kind of pain.</li>
-            <li>The hardest part is that you do not have a crystal ball. You are deciding under uncertainty.</li>
-            <li>So the real question is not “What is the right architecture?” but “What pain am I choosing today, and how bad will it be when the context changes?”</li>
-            <li>Architectural decisions that once looked reasonable later became liabilities.</li>
-            <li>Regret is not a sign of incompetence.</li>
-            <li>Regret is the normal outcome of designing in a changing environment.</li>
-          </ul>
-        </aside>
-      </section>
-
       <section class="deck-slide theme-charcoal">
         <div class="slide-frame">
           <div class="deck-header">
@@ -597,6 +569,35 @@
         </aside>
       </section>
 
+      <section class="deck-slide theme-ember">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>Core thesis</div>
+            <div class="page-label">Trade-offs expire</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>Every design decision expires.</h1>
+            <p class="quote">The real question is not “What is the right architecture?” but “What pain am I choosing today, and how bad will it be when the context changes?”</p>
+          </div>
+          <div class="deck-footer">
+            <div>Trade-offs age. Assumptions expire.</div>
+            <div>Regret is part of the job.</div>
+          </div>
+        </div>
+        <aside class="notes">
+          <ul>
+            <li>In large systems, everything is a trade-off.</li>
+            <li>No design gives only benefits; every design also buys you a particular kind of pain.</li>
+            <li>The hardest part is that you do not have a crystal ball. You are deciding under uncertainty.</li>
+            <li>So the real question is not “What is the right architecture?” but “What pain am I choosing today, and how bad will it be when the context changes?”</li>
+            <li>Architectural decisions that once looked reasonable later became liabilities.</li>
+            <li>Regret is not a sign of incompetence.</li>
+            <li>Regret is the normal outcome of designing in a changing environment.</li>
+          </ul>
+        </aside>
+      </section>
+
+
       <section class="deck-slide theme-ruby">
         <div class="slide-frame">
           <div class="deck-header">
@@ -624,7 +625,7 @@
           <div class="slide-shell split">
             <div class="slide-shell hero">
               <h1>Bad code is unpleasant, but survivable.</h1>
-              <p class="lead">Local messes can be cleaned slowly and independently. Global constraints can freeze whole organizations.</p>
+              <p class="lead">Local messes can be cleaned slowly and independently.</p>
             </div>
           </div>
           <div class="deck-footer">
@@ -651,7 +652,6 @@
           <div class="slide-shell hero">
             <h1>Refactoring at scale</h1>
             <p class="quote">Architectural refactoring is not cleanup; it is the main mechanism by which large systems evolve.</p>
-            <p class="supporting">The hard part is not seeing that something is bad. The hard part is changing it without stopping the world.</p>
           </div>
           <div class="deck-footer">
             <div>Migration beats cleanup as the dominant lens.</div>
@@ -663,6 +663,23 @@
             <li>We should care less about static judgments like “this code smells” and more about dynamic questions like: how do I change this safely? how do I migrate incrementally? how do I keep the system working while replacing its internals?</li>
           </ul>
         </aside>
+      </section>
+
+      <section class="deck-slide theme-ember">
+        <div class="slide-frame">
+          <div class="deck-header">
+            <div>What makes change hard</div>
+            <div class="page-label">Without stopping the world</div>
+          </div>
+          <div class="slide-shell hero">
+            <h1>The hard part is not seeing that something is bad.</h1>
+            <h1 class="jumbo">The hard part is changing it without stopping the world.</h1>
+          </div>
+          <div class="deck-footer">
+            <div>Diagnosis is easy compared to migration.</div>
+            <div>Production keeps moving while the system changes.</div>
+          </div>
+        </div>
       </section>
 
       <section class="deck-slide theme-cobalt">
@@ -701,8 +718,8 @@
             <div class="page-label">Changeability under pressure</div>
           </div>
           <div class="slide-shell hero">
-            <h1>Good large-scale design is not static elegance;</h1>
-            <h1 class="jumbo">it is changeability under load, new information, and business pressure.</h1>
+            <h4>Let's talk code now</h4>
+            <h1>Good large-scale code design is not static elegance; it is changeability under load, new information, and business pressure.</h1>
           </div>
           <div class="deck-footer">
             <div>The system is good if it can keep moving while reality changes around it.</div>
@@ -789,8 +806,7 @@
             <div class="manifesto">
               <div class="manifesto-line fragment fade-up"><span class="n">1</span><span class="t">Since design decisions age, the goal is not permanence.</span></div>
               <div class="manifesto-line fragment fade-up"><span class="n">2</span><span class="t">Since trade-offs are unavoidable, the goal is not purity.</span></div>
-              <div class="manifesto-line fragment fade-up"><span class="n">3</span><span class="t">Since systems change, the goal is not elegance alone.</span></div>
-              <div class="manifesto-line fragment fade-up"><span class="n">4</span><span class="t">The real goal is to make future change less catastrophic.</span></div>
+              <div class="manifesto-line fragment fade-up"><span class="n">3</span><span class="t">Do not design for change, but accept that change will come.</span></div>
             </div>
           </div>
           <div class="deck-footer">
@@ -808,7 +824,7 @@
           </div>
           <div class="slide-shell hero">
             <h1>Optimize for reversibility, not timelessness.</h1>
-            <p class="lead">Get comfortable with <span class="accent">half-live designs</span>.</p>
+            <p class="lead">Get comfortable with <span class="accent">half-life designs</span>.</p>
           </div>
           <div class="deck-footer">
             <div>Many good designs are intentionally temporary.</div>
@@ -841,7 +857,7 @@
             <div class="page-label">Data and infrastructure boundaries</div>
           </div>
           <div class="slide-shell hero">
-            <h1>Treat data and infrastructure boundaries as first-class.</h1>
+            <h1>Treat data and infrastructure as first-class.</h1>
             <p class="lead">They outlive code fashion. They are where migration cost concentrates.</p>
           </div>
           <div class="deck-footer">
@@ -858,29 +874,12 @@
             <div class="page-label">Abstractions with evidence</div>
           </div>
           <div class="slide-shell hero">
-            <h1>Choose abstractions only when you have evidence you need them.</h1>
+            <h1>Go for code abstractions only when you have evidence you need them.</h1>
             <p class="lead">Premature flexibility often turns into permanent indirection.</p>
           </div>
           <div class="deck-footer">
             <div>Wait for the shape of variation to become real.</div>
             <div>Evidence beats aesthetic symmetry.</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="deck-slide theme-ruby">
-        <div class="slide-frame">
-          <div class="deck-header">
-            <div>Principle 5</div>
-            <div class="page-label">Optimization ages</div>
-          </div>
-          <div class="slide-shell hero">
-            <h1>Accept that today’s optimization may become tomorrow’s bottleneck.</h1>
-            <p class="lead">The shortcut that saves you now can later trap growth, load patterns, or organization structure.</p>
-          </div>
-          <div class="deck-footer">
-            <div>Success changes the shape of the system.</div>
-            <div>Scale turns strengths into liabilities.</div>
           </div>
         </div>
       </section>
@@ -892,12 +891,8 @@
             <div class="page-label">Migration path</div>
           </div>
           <div class="slide-shell hero">
-            <h1>Design with the migration path in mind, not just the steady state.</h1>
-            <p class="lead">The replacement strategy is part of the design.</p>
-          </div>
-          <div class="deck-footer">
-            <div>If you cannot explain how to evolve it, you do not fully understand it.</div>
-            <div>Steady state is only one phase of the system.</div>
+            <h1>Take the simplest path and do not overengineer.</h1>
+            <p class="lead">The future will prove you wrong 100% of the time.</p>
           </div>
         </div>
       </section>

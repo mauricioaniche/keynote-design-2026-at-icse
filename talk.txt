@@ -6,20 +6,7 @@ Slide 0: About me. Mauricio, CTO at Alura. Former Uber and Adyen. Former assista
 
 Slide 1: In big fonts, "We love software design", and in smaller fonts, "and that's why we tend to think this is the most important part of software"
 
-Slide 2: Big font "Every design decision expires". The real question is not “What is the right architecture?” but “What pain am I choosing today, and how bad will it be when the context changes?”
-
-Personal notes:
-
-* In large systems, everything is a trade-off.
-* No design gives only benefits; every design also buys you a particular kind of pain.
-* The hardest part is that you do not have a crystal ball. You are deciding under uncertainty.
-* So the real question is not “What is the right architecture?” but “What pain am I choosing today, and how bad will it be when the context changes?”
-* architectural decisions that once looked reasonable later became liabilities,
-* regret is not a sign of incompetence,
-* regret is the normal outcome of designing in a changing environment.
-
-
-Slide 3: Big font: The unconfortable truth: "at scale, the real killers are architecture and infrastructure".
+Slide 2: Big font: The unconfortable truth: "at scale, the real killers are architecture and infrastructure".
 
 Personal notes:
 
@@ -32,6 +19,18 @@ Personal notes:
 * changing queue semantics,
 * replacing a foundational dependency,
 * migrating stateful systems without downtime.
+
+Slide 3: Big font "Every design decision expires". The real question is not “What is the right architecture?” but “What pain am I choosing today, and how bad will it be when the context changes?”
+
+Personal notes:
+
+* In large systems, everything is a trade-off.
+* No design gives only benefits; every design also buys you a particular kind of pain.
+* The hardest part is that you do not have a crystal ball. You are deciding under uncertainty.
+* So the real question is not “What is the right architecture?” but “What pain am I choosing today, and how bad will it be when the context changes?”
+* architectural decisions that once looked reasonable later became liabilities,
+* regret is not a sign of incompetence,
+* regret is the normal outcome of designing in a changing environment.
 
 Slide 3.5: "In an agentic world, this is even less of a problem".
 
@@ -53,7 +52,8 @@ Personal notes:
 Slide 5: Refactoring at scale. Refactoring is not cleanup, refactoring is the main mechanism by which large systems evolve.
 
 * That means we should care less about static judgments like “this code smells” and more about dynamic questions like: how do I change this safely? how do I migrate incrementally? how do I keep the system working while replacing its internals? 
-* The hard part is not seeing that something is bad. The hard part is changing it without stopping the world.
+
+Slide 5.5: "The hard part is not seeing that something is bad. The hard part is changing it without stopping the world."
 
 Slide 6: Refactor safely. Bullet point with feature flags, shadow traffic, dual reads and writes, rolling upgrades, backward-compatible APIs, data migration plans
 
