@@ -142,9 +142,10 @@
       max-width: 1060px;
     }
 
-    .theme-ember .supporting,
-    .theme-night .supporting,
-    .theme-charcoal .supporting {
+    .theme-opening .supporting,
+    .theme-tension .supporting,
+    .theme-systems .supporting,
+    .theme-signal .supporting {
       color: rgba(255, 247, 240, 0.8);
     }
 
@@ -300,117 +301,33 @@
       padding: 0 0.08em;
     }
 
-    .reveal-viewport.theme-sunrise {
-      background: linear-gradient(135deg, #fff4d8 0%, #ffd4a8 48%, #ff8a6c 100%);
+    /* Section-based themes keep contiguous slides visually coherent. */
+    .reveal-viewport.theme-opening {
+      background: linear-gradient(135deg, #1c1016 0%, #5e2944 46%, #ff845b 100%);
     }
 
-    .theme-sunrise {
-      color: #21120f;
-    }
-
-    .reveal-viewport.theme-sunrise::before {
-      width: 42vw;
-      height: 42vw;
-      right: -12vw;
-      top: -10vw;
-      background: rgba(255, 255, 255, 0.3);
-      opacity: 0.55;
-    }
-
-    .reveal-viewport.theme-cobalt {
-      background: linear-gradient(145deg, #d9efff 0%, #88bfff 42%, #2450d3 100%);
-    }
-
-    .theme-cobalt {
-      color: #071226;
-    }
-
-    .reveal-viewport.theme-cobalt::after {
-      width: 30vw;
-      height: 30vw;
-      left: -8vw;
-      bottom: -8vw;
-      background: rgba(255, 255, 255, 0.2);
-      opacity: 0.55;
-    }
-
-    .reveal-viewport.theme-ember {
-      background: linear-gradient(135deg, #1f1116 0%, #682d4c 48%, #ff7b54 100%);
-    }
-
-    .theme-ember {
+    .theme-opening {
       color: #fff7ef;
     }
 
-    .reveal-viewport.theme-ember::before {
-      width: 34vw;
-      height: 34vw;
+    .reveal-viewport.theme-opening::before {
+      width: 36vw;
+      height: 36vw;
       left: -10vw;
       top: 8vh;
-      background: rgba(255, 214, 169, 0.2);
+      background: rgba(255, 214, 169, 0.18);
       opacity: 0.55;
     }
 
-    .reveal-viewport.theme-forest {
-      background: linear-gradient(145deg, #f4ffe2 0%, #c1efb3 45%, #27a36a 100%);
+    .reveal-viewport.theme-context {
+      background: linear-gradient(135deg, #fffdf8 0%, #f4ebdf 52%, #d7cabd 100%);
     }
 
-    .theme-forest {
-      color: #0f2119;
-    }
-
-    .reveal-viewport.theme-forest::after {
-      width: 34vw;
-      height: 34vw;
-      right: -10vw;
-      bottom: -12vw;
-      background: rgba(255, 255, 255, 0.16);
-      opacity: 0.55;
-    }
-
-    .reveal-viewport.theme-night {
-      background: linear-gradient(140deg, #0f172a 0%, #172554 44%, #3b82f6 100%);
-    }
-
-    .theme-night {
-      color: #eef5ff;
-    }
-
-    .reveal-viewport.theme-night::before {
-      width: 28vw;
-      height: 28vw;
-      top: -8vw;
-      right: 12vw;
-      background: rgba(121, 173, 255, 0.26);
-      opacity: 0.55;
-    }
-
-    .reveal-viewport.theme-citrus {
-      background: linear-gradient(145deg, #f5ffd6 0%, #ffe56b 40%, #ff8f32 100%);
-    }
-
-    .theme-citrus {
-      color: #23140b;
-    }
-
-    .reveal-viewport.theme-citrus::after {
-      width: 34vw;
-      height: 34vw;
-      left: -12vw;
-      bottom: -12vw;
-      background: rgba(255, 255, 255, 0.16);
-      opacity: 0.55;
-    }
-
-    .reveal-viewport.theme-paper {
-      background: linear-gradient(135deg, #fffdf8 0%, #f2eadf 52%, #d7cabd 100%);
-    }
-
-    .theme-paper {
+    .theme-context {
       color: #17120f;
     }
 
-    .reveal-viewport.theme-paper::before {
+    .reveal-viewport.theme-context::before {
       width: 30vw;
       height: 30vw;
       right: -10vw;
@@ -419,49 +336,100 @@
       opacity: 0.55;
     }
 
-    .reveal-viewport.theme-ruby {
-      background: linear-gradient(145deg, #fff1ef 0%, #ffb4aa 36%, #cc2f5d 100%);
+    .reveal-viewport.theme-tension {
+      background: linear-gradient(145deg, #24141d 0%, #6c3152 44%, #f37a5e 100%);
     }
 
-    .theme-ruby {
-      color: #230d16;
+    .theme-tension {
+      color: #fff7ef;
     }
 
-    .reveal-viewport.theme-ruby::after {
-      width: 30vw;
-      height: 30vw;
-      right: -8vw;
-      bottom: -8vw;
+    .reveal-viewport.theme-tension::after {
+      width: 34vw;
+      height: 34vw;
+      right: -12vw;
+      bottom: -10vw;
+      background: rgba(255, 225, 193, 0.18);
+      opacity: 0.55;
+    }
+
+    .reveal-viewport.theme-systems {
+      background: linear-gradient(145deg, #0f172a 0%, #18346a 44%, #4f8ffd 100%);
+    }
+
+    .theme-systems {
+      color: #eef5ff;
+    }
+
+    .reveal-viewport.theme-systems::before {
+      width: 28vw;
+      height: 28vw;
+      top: -8vw;
+      right: 12vw;
+      background: rgba(121, 173, 255, 0.24);
+      opacity: 0.55;
+    }
+
+    .reveal-viewport.theme-code {
+      background: linear-gradient(140deg, #fff6ea 0%, #f8dbc0 42%, #efad7b 100%);
+    }
+
+    .theme-code {
+      color: #20140e;
+    }
+
+    .reveal-viewport.theme-code::after {
+      width: 34vw;
+      height: 34vw;
+      left: -12vw;
+      bottom: -12vw;
       background: rgba(255, 255, 255, 0.18);
       opacity: 0.55;
     }
 
-    .reveal-viewport.theme-violet {
-      background: linear-gradient(135deg, #f2ebff 0%, #c9bbff 42%, #5a54e8 100%);
+    .reveal-viewport.theme-principles {
+      background: linear-gradient(145deg, #eefade 0%, #b9e7a8 42%, #2b9869 100%);
     }
 
-    .theme-violet {
-      color: #140f2f;
+    .theme-principles {
+      color: #102118;
     }
 
-    .reveal-viewport.theme-violet::before {
+    .reveal-viewport.theme-principles::after {
       width: 34vw;
       height: 34vw;
-      left: -12vw;
-      top: -10vw;
-      background: rgba(255, 255, 255, 0.2);
+      right: -10vw;
+      bottom: -12vw;
+      background: rgba(255, 255, 255, 0.16);
       opacity: 0.55;
     }
 
-    .reveal-viewport.theme-charcoal {
+    .reveal-viewport.theme-research {
+      background: linear-gradient(140deg, #fff5d9 0%, #ffd79b 42%, #ff9162 100%);
+    }
+
+    .theme-research {
+      color: #24140f;
+    }
+
+    .reveal-viewport.theme-research::before {
+      width: 40vw;
+      height: 40vw;
+      right: -12vw;
+      top: -10vw;
+      background: rgba(255, 255, 255, 0.28);
+      opacity: 0.55;
+    }
+
+    .reveal-viewport.theme-signal {
       background: linear-gradient(135deg, #111111 0%, #2b2b2b 45%, #767676 100%);
     }
 
-    .theme-charcoal {
+    .theme-signal {
       color: #f6f0e8;
     }
 
-    .reveal-viewport.theme-charcoal::after {
+    .reveal-viewport.theme-signal::after {
       width: 36vw;
       height: 36vw;
       right: -14vw;
@@ -517,7 +485,7 @@
 <body>
   <div class="reveal">
     <div class="slides">
-      <section class="deck-slide theme-ember">
+      <section class="deck-slide theme-opening">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Designing at Scale:</h1>
@@ -528,7 +496,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-sunrise">
+      <section class="deck-slide theme-context">
         <div class="slide-frame">
           <div class="slide-shell about">
             <div class="slide-shell hero">
@@ -539,7 +507,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-paper">
+      <section class="deck-slide theme-context">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>What do I mean by scale?</h1>
@@ -555,7 +523,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-cobalt">
+      <section class="deck-slide theme-tension">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1 class="jumbo">We love software design</h1>
@@ -564,7 +532,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-charcoal">
+      <section class="deck-slide theme-signal">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>The uncomfortable truth:</h1>
@@ -573,7 +541,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-ember">
+      <section class="deck-slide theme-tension">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Every code and architectural decision expires.</h1>
@@ -582,7 +550,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-ruby">
+      <section class="deck-slide theme-systems">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <div class="rule"></div>
@@ -592,7 +560,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-cobalt">
+      <section class="deck-slide theme-systems">
         <div class="slide-frame">
           <div class="slide-shell split">
             <div class="slide-shell hero">
@@ -610,7 +578,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-ember">
+      <section class="deck-slide theme-signal">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>The hard part is not seeing that something is bad.
@@ -619,7 +587,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-night">
+      <section class="deck-slide theme-systems">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Time is part of the design.</h1>
@@ -635,7 +603,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-forest">
+      <section class="deck-slide theme-systems">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Socio-technical design matters.</h1>
@@ -650,7 +618,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-night">
+      <section class="deck-slide theme-systems">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h4>Let's talk code now</h4>
@@ -659,7 +627,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-ruby">
+      <section class="deck-slide theme-code">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>If changeability is the goal,</h1>
@@ -668,7 +636,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-sunrise">
+      <section class="deck-slide theme-code">
         <div class="slide-frame">
           <div class="slide-shell split">
             <div class="slide-shell hero">
@@ -679,7 +647,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-paper">
+      <section class="deck-slide theme-code">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1 class="jumbo">Code challenges in large-scale software systems</h1>
@@ -697,7 +665,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-forest">
+      <section class="deck-slide theme-code">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <div class="rule"></div>
@@ -707,7 +675,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-paper">
+      <section class="deck-slide theme-signal">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>This is not permission to write sloppy code.</h1>
@@ -716,17 +684,17 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-forest">
+      <section class="deck-slide theme-code">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <div class="rule"></div>
-            <h1 class="story-title">Story: lack of design flexibility at Adyen</h1>
+            <h1 class="story-title">Story: code flexibility at Adyen</h1>
             <p class="lead">When the lack of a good code abstraction can cost you money.</p>
           </div>
         </div>
       </section>
 
-      <section class="deck-slide theme-ruby">
+      <section class="deck-slide theme-principles">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Let’s get concrete:</h1>
@@ -735,7 +703,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-citrus">
+      <section class="deck-slide theme-principles">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Optimize for reversibility, not timelessness.</h1>
@@ -744,7 +712,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-night">
+      <section class="deck-slide theme-principles">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Make failure visible.</h1>
@@ -753,7 +721,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-forest">
+      <section class="deck-slide theme-principles">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Treat data and infrastructure as first-class.</h1>
@@ -762,7 +730,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-charcoal">
+      <section class="deck-slide theme-principles">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Take the simplest path and do not overengineer.</h1>
@@ -771,7 +739,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-citrus">
+      <section class="deck-slide theme-principles">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Be ready to refactor.</h1>
@@ -780,7 +748,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-sunrise">
+      <section class="deck-slide theme-research">
         <div class="slide-frame">
           <div class="slide-shell split">
             <div class="slide-shell hero">
@@ -797,7 +765,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-ember">
+      <section class="deck-slide theme-research">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Bring research closer to production reality.</h1>
@@ -806,7 +774,7 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-paper">
+      <section class="deck-slide theme-research">
         <div class="slide-frame">
           <div class="slide-shell split">
             <div class="slide-shell hero">
@@ -837,16 +805,14 @@
   <script>
     const viewport = document.querySelector(".reveal-viewport") || document.body;
     const themeClasses = [
-      "theme-sunrise",
-      "theme-cobalt",
-      "theme-ember",
-      "theme-forest",
-      "theme-night",
-      "theme-citrus",
-      "theme-paper",
-      "theme-ruby",
-      "theme-violet",
-      "theme-charcoal"
+      "theme-opening",
+      "theme-context",
+      "theme-tension",
+      "theme-systems",
+      "theme-code",
+      "theme-principles",
+      "theme-research",
+      "theme-signal"
     ];
 
     function syncViewportTheme() {

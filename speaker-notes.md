@@ -1,6 +1,7 @@
 # Speaker Notes
 
 These notes follow the current slide order in `index.html`.
+The current deck revision groups slide backgrounds by narrative section; slide order and core speaking points remain the same.
 
 ## Slide 1 - Designing at Scale: Challenges, Pitfalls, and Lessons Learned
 
@@ -122,7 +123,7 @@ These notes follow the current slide order in `index.html`.
 - The point is not that local code quality is irrelevant; the point is that it is only one part of large-scale design.
 - Bad code still hurts. It is just often easier to repair than a bad boundary, a bad migration path, or the wrong data decision.
 
-## Slide 18 - Story: lack of design flexibility at Adyen
+## Slide 18 - Story: code flexibility at Adyen
 
 - Tell the Adyen counter-example where the lack of the right abstraction had real business cost.
 - This is the point where you show you are not saying "abstractions never matter."
