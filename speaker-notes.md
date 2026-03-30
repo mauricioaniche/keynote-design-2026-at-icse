@@ -189,3 +189,4 @@ These notes follow the current slide order in `index.html`.
 - Time, rollout, ownership, and compatibility are part of the design itself.
 - Code should stay simple, disciplined, and shaped by real pressure.
 - The goal is not timelessness, but reversible and survivable systems.
+- After the last summary point, let the contact panel appear on the right and close by inviting people to continue the conversation by email or on Twitter.
