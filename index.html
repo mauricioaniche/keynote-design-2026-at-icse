@@ -515,6 +515,22 @@
         </div>
       </section>
 
+      <section class="deck-slide theme-paper">
+        <div class="slide-frame">
+          <div class="slide-shell hero">
+            <h1>What do I mean by scale?</h1>
+            <ul class="tight">
+              <li class="fragment fade-up">Traffic and uptime expectations</li>
+              <li class="fragment fade-up">Large volumes of data and users</li>
+              <li class="fragment fade-up">Many teams and many services</li>
+              <li class="fragment fade-up">Ownership and coordination boundaries</li>
+              <li class="fragment fade-up">Security, regulatory, and compliance pressure</li>
+              <li class="fragment fade-up">Systems that must keep evolving for years</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section class="deck-slide theme-cobalt">
         <div class="slide-frame">
           <div class="slide-shell hero">
@@ -528,29 +544,7 @@
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>The uncomfortable truth:</h1>
-            <h1 class="jumbo">at scale, the real killers are architecture, infrastructure, and data. Not code.</h1>
-          </div>
-        </div>
-      </section>
-
-      <section class="deck-slide theme-paper">
-        <div class="slide-frame">
-          <div class="slide-shell split">
-            <div class="slide-shell hero">
-              <h1>Bad code is unpleasant, but survivable.</h1>
-              <p class="lead">Local messes can be cleaned slowly and independently.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="deck-slide theme-night">
-        <div class="slide-frame">
-          <div class="slide-shell split">
-            <div class="slide-shell hero">
-              <h1>In an agentic world, code is even less of a problem.</h1>
-              <p class="supporting">Local messes get cheaper to read, patch, and reshape.</p>
-            </div>
+            <h1 class="jumbo">at scale, the most expensive mistakes live in architecture, infrastructure, and data.</h1>
           </div>
         </div>
       </section>
@@ -559,25 +553,7 @@
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Every code and architectural decision expires.</h1>
-            <p class="quote">The real question is not the 'what', but the 'when'.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="deck-slide theme-citrus">
-        <div class="slide-frame">
-          <div class="slide-shell hero">
-            <h1>Refactoring at scale</h1>
-            <p class="quote">Architectural refactoring is not cleanup; it is the main mechanism by which large systems evolve.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="deck-slide theme-ember">
-        <div class="slide-frame">
-          <div class="slide-shell hero">
-            <h1>The hard part is not seeing that something is bad.
-            The hard part is changing it without stopping the world.</h1>
+            <p class="quote">The real question is not only what works now, but how it will age.</p>
           </div>
         </div>
       </section>
@@ -587,7 +563,7 @@
           <div class="slide-shell hero">
             <div class="rule"></div>
             <h1 class="story-title">Story: caching migration at Uber</h1>
-            <p class="lead">Not a story about ugly code. A story about "just" moving data between two caching technologies.</p>
+            <p class="lead">Not a story about ugly code. A story about "just" moving data and behavior between two caching technologies.</p>
           </div>
         </div>
       </section>
@@ -610,11 +586,60 @@
         </div>
       </section>
 
+      <section class="deck-slide theme-ember">
+        <div class="slide-frame">
+          <div class="slide-shell hero">
+            <h1>The hard part is not seeing that something is bad.
+            The hard part is changing it without stopping the world.</h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-night">
+        <div class="slide-frame">
+          <div class="slide-shell hero">
+            <h1>Time is part of the design.</h1>
+            <ul class="tight">
+              <li class="fragment fade-up">Schema evolution</li>
+              <li class="fragment fade-up">Deprecation windows</li>
+              <li class="fragment fade-up">Backfills and reprocessing</li>
+              <li class="fragment fade-up">Idempotency and retries</li>
+              <li class="fragment fade-up">Dual writes and compatibility periods</li>
+              <li class="fragment fade-up">Sunsetting old paths</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-forest">
+        <div class="slide-frame">
+          <div class="slide-shell hero">
+            <h1>Socio-technical design matters.</h1>
+            <ul class="tight">
+              <li class="fragment fade-up">Team boundaries shape architecture</li>
+              <li class="fragment fade-up">Ownership determines how fast change can happen</li>
+              <li class="fragment fade-up">Decision-making processes can make changes fast or slow</li>
+              <li class="fragment fade-up">Conway's Law is a daily constraint</li>
+              <li class="fragment fade-up">Many migrations fail organizationally before they fail technically</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section class="deck-slide theme-night">
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h4>Let's talk code now</h4>
             <h1>Good large-scale code design is not static elegance; it is changeability under load, new information, and business pressure.</h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-ruby">
+        <div class="slide-frame">
+          <div class="slide-shell hero">
+            <h1>If changeability is the goal,</h1>
+            <h1 class="jumbo">what should code optimize for?</h1>
           </div>
         </div>
       </section>
@@ -654,6 +679,15 @@
             <div class="rule"></div>
             <h1 class="story-title">Story: permission management at Uber</h1>
             <p class="lead">Fine-grained security matters when you have thousands of microservices.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-paper">
+        <div class="slide-frame">
+          <div class="slide-shell hero">
+            <h1>This is not permission to write sloppy code.</h1>
+            <p class="lead">Readable, testable, disciplined code still matters. The point is that local code quality is only one part of large-scale design.</p>
           </div>
         </div>
       </section>
@@ -708,16 +742,7 @@
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Take the simplest path and do not overengineer.</h1>
-            <p class="lead">The future will prove you wrong 100% of the time.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="deck-slide theme-violet">
-        <div class="slide-frame">
-          <div class="slide-shell hero">
-            <h1>Go for code abstractions only when you have evidence you need them.</h1>
-            <p class="lead">Simpler code is always better.</p>
+            <p class="lead">Predictions age quickly, so do not pay abstraction tax too early.</p>
           </div>
         </div>
       </section>
@@ -726,7 +751,7 @@
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Be ready to refactor.</h1>
-            <p class="lead">not too soon but not too late.</p>
+            <p class="lead">Learn from the past, plan the future, and repeat.</p>
           </div>
         </div>
       </section>
@@ -737,11 +762,11 @@
             <div class="slide-shell hero">
               <h1>What’s in it for you, researchers?</h1>
               <ol class="tight">
-                <li class="fragment fade-up">Forget code smells :-)</li>
-                <li class="fragment fade-up">Architectural reversibility</li>
-                <li class="fragment fade-up">Infrastructure migration patterns</li>
-                <li class="fragment fade-up">Large-scale refactoring strategies</li>
-                <li class="fragment fade-up">How decisions age as organizations and traffic evolve</li>
+                <li class="fragment fade-up">Study software as a changing system, not a static artifact</li>
+                <li class="fragment fade-up">Include data, infrastructure, operations, and teams in the picture</li>
+                <li class="fragment fade-up">Focus on decisions, trade-offs, and how they age over time</li>
+                <li class="fragment fade-up">Help make change safer, cheaper, and more observable</li>
+                <li class="fragment fade-up">Look where the pain is, not only where measurement is easy</li>
               </ol>
             </div>
           </div>
@@ -751,7 +776,8 @@
       <section class="deck-slide theme-ember">
         <div class="slide-frame">
           <div class="slide-shell hero">
-            <h1>Get away from the coziness of your research lab :)</h1>
+            <h1>Bring research closer to production reality.</h1>
+            <p class="lead">We need more field work, more operational context, and more studies of systems that cannot stop.</p>
           </div>
         </div>
       </section>
@@ -762,12 +788,12 @@
             <div class="slide-shell hero">
               <h1>A summary</h1>
               <ul class="tight">
-                <li class="fragment fade-up">Every design decision is a trade-off under uncertainty.</li>
-                <li class="fragment fade-up">At scale, architecture and infrastructure hurt.</li>
-                <li class="fragment fade-up">Refactoring and migration are the core large-scale design skills.</li>
-                <li class="fragment fade-up">At code level, concurrency, error handling, workflow enforcement, service-to-service communication is more important than code beauty.</li>
-                <li class="fragment fade-up">Our abstractions should match the real shape of the work, simplicity is key.</li>
-                <li class="fragment fade-up">The goal is not perfect design, but refactor at scale.</li>
+                <li class="fragment fade-up">Scale means traffic, data, uptime, teams, services, and long-lived change.</li>
+                <li class="fragment fade-up">The hardest design problems are often architectural, infrastructural, data-heavy, and organizational.</li>
+                <li class="fragment fade-up">The only certainty is that today's decisions will age, and refactoring will eventually be necessary.</li>
+                <li class="fragment fade-up">Time, rollout, ownership, and compatibility are part of the design.</li>
+                <li class="fragment fade-up">Code should stay simple, disciplined, and shaped by real pressure.</li>
+                <li class="fragment fade-up">The goal is not timelessness, but reversible and survivable systems.</li>
               </ul>
             </div>
           </div>
