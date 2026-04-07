@@ -110,26 +110,33 @@ The current deck revision groups slide backgrounds by narrative section; slide o
 - OO can add abstraction, indirection, and boilerplate before it buys real value.
 - In microservice-heavy systems, explicit error handling and concurrency often matter more than elegant polymorphism.
 
-## Slide 16 - Story: permission management at Uber
+## Slide 16 - Flexibility is often overrated.
+
+- Use this as the sharpening point after the list of code realities.
+- Say that we often pay abstraction tax for hypothetical future variation that never arrives.
+- In large systems, directness and readability frequently beat elaborate extension mechanisms.
+- The nuance matters: flexibility is valuable when the variation pressure is real, but expensive when it is speculative.
+
+## Slide 17 - Story: permission management at Uber
 
 - Tell the permission-management story as an example where code design is really about coordination and safety at scale.
 - Good beats: many services, fine-grained security, workflow enforcement, ownership boundaries, and the operational cost of getting it wrong.
 - Use it to reinforce that large-scale design challenges are often socio-technical and cross-service, not just local code-structure problems.
 
-## Slide 17 - This is not permission to write sloppy code
+## Slide 18 - This is not permission to write sloppy code
 
 - Slow down a little here to remove the most obvious misreading of the talk.
 - Say that readable, testable, disciplined code still matters a lot.
 - The point is not that local code quality is irrelevant; the point is that it is only one part of large-scale design.
 - Bad code still hurts. It is just often easier to repair than a bad boundary, a bad migration path, or the wrong data decision.
 
-## Slide 18 - Story: code flexibility at Adyen
+## Slide 19 - Story: code flexibility at Adyen
 
 - Tell the Adyen counter-example where the lack of the right abstraction had real business cost.
 - This is the point where you show you are not saying "abstractions never matter."
 - The lesson is: choose abstractions when the pressure is real and evidenced, not because purity says you should.
 
-## Slide 19 - Let’s get concrete
+## Slide 20 - Let’s get concrete
 
 - Reset the room: if architecture is uncertain and design decisions age, what should we optimize for instead?
 - The goal is not permanence.
@@ -137,37 +144,37 @@ The current deck revision groups slide backgrounds by narrative section; slide o
 - The goal is not elegance alone.
 - The real goal is to make future change less catastrophic.
 
-## Slide 20 - Optimize for reversibility, not timelessness
+## Slide 21 - Optimize for reversibility, not timelessness
 
 - Favor designs you can undo, reshape, or replace.
 - Get comfortable with half-life designs: today's answer only needs to survive until the next meaningful context shift.
 - Reversibility is often more valuable than theoretical timelessness.
 
-## Slide 21 - Make failure visible
+## Slide 22 - Make failure visible
 
 - Hidden failure modes are the most dangerous because teams discover them too late.
 - Prefer designs that fail loudly, locally, and observably.
 - If something will hurt, let it hurt in a way you can detect, localize, and roll back.
 
-## Slide 22 - Treat data and infrastructure as first-class
+## Slide 23 - Treat data and infrastructure as first-class
 
 - Data and infrastructure boundaries deserve first-class design attention because they outlive code fashion.
 - This is where migration cost concentrates.
 - Spend more design energy here than we usually do.
 
-## Slide 23 - Take the simplest path and do not overengineer
+## Slide 24 - Take the simplest path and do not overengineer
 
 - Take the simplest path that still preserves room to move later.
 - Predictions age quickly, so avoid paying abstraction tax too early.
 - Simple is not naive; simple is often the most adaptable starting point.
 
-## Slide 24 - Be ready to refactor
+## Slide 25 - Be ready to refactor
 
 - Today's optimization may become tomorrow's bottleneck.
 - Do not blame the past, learn from it.
 - Refactor not too soon, but not too late.
 
-## Slide 25 - What’s in it for you, researchers?
+## Slide 26 - What’s in it for you, researchers?
 
 - Invite the researchers to widen the target beyond classic code-quality conversations.
 - Frame the opportunity at a higher level: study software as something that changes over time, not only as a static artifact.
@@ -176,13 +183,13 @@ The current deck revision groups slide backgrounds by narrative section; slide o
 - The research contribution can be theory, empirical work, tools, methods, or measurement, as long as it helps us understand or improve real change.
 - If we want relevant software engineering research, we need to study where the pain actually is.
 
-## Slide 26 - Bring research closer to production reality
+## Slide 27 - Bring research closer to production reality
 
 - Deliver this as an invitation, not an attack.
 - Encourage more field work, more time inside real production systems, and more contact with operational constraints.
 - The affectionate message is that real systems will challenge and improve our theories.
 
-## Slide 27 - A summary
+## Slide 28 - A summary
 
 - Scale is multi-dimensional: traffic, data, uptime, teams, services, regulation, and time.
 - The hardest design problems are often architectural, infrastructural, data-heavy, and organizational.
