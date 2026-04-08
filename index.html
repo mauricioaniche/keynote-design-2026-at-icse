@@ -517,7 +517,7 @@
               <li class="fragment fade-up">Large volumes of data and users</li>
               <li class="fragment fade-up">Many teams and many services</li>
               <li class="fragment fade-up">Security, regulatory, and compliance pressure</li>
-              <li class="fragment fade-up">Mix of old a new systems all working together</li>
+              <li class="fragment fade-up">Mix of old and new systems all working together</li>
             </ul>
           </div>
         </div>
@@ -555,7 +555,7 @@
           <div class="slide-shell hero">
             <div class="rule"></div>
             <h1 class="story-title">Story: caching migration at Uber</h1>
-            <p class="lead">A story about "just" moving data and behavior between two caching technologies.</p>
+            <p class="lead">A story about "just" moving to a different Redis instance.</p>
           </div>
         </div>
       </section>
@@ -570,7 +570,7 @@
                 <li class="fragment fade-up">Shadow traffic</li>
                 <li class="fragment fade-up">Dual reads and writes</li>
                 <li class="fragment fade-up">Rolling upgrades</li>
-                <li class="fragment fade-up">Backward-compatible APIs</li>
+                <li class="fragment fade-up">Backward compatibility</li>
               </ol>
             </div>
           </div>
@@ -610,7 +610,7 @@
               <li class="fragment fade-up">Team boundaries shape architecture and may also need refactor</li>
               <li class="fragment fade-up">Ownership determines how fast change can happen</li>
               <li class="fragment fade-up">Decision-making processes can make changes fast or slow</li>
-              <li class="fragment fade-up">Many migrations fail organizationally before they fail technically</li>
+              <li class="fragment fade-up">Migrations can fail organizationally before they fail technically</li>
             </ul>
           </div>
         </div>
@@ -629,7 +629,7 @@
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>If "good enough" is the goal,</h1>
-            <h1 class="jumbo">what should we optimize code for?</h1>
+            <h1 class="jumbo">we should optimize for simplicity!</h1>
           </div>
         </div>
       </section>
@@ -704,7 +704,7 @@
       <section class="deck-slide theme-principles">
         <div class="slide-frame">
           <div class="slide-shell hero">
-            <h1>Accept a "good enough" design.</h1>
+            <h1>Accept that "good enough" is good enough.</h1>
             <p class="lead">No code survives the test of time, so why overengineer it?</p>
           </div>
         </div>
@@ -732,7 +732,7 @@
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Constant refactor as the natural course of things.</h1>
-            <p class="lead">Learn from the past, plan the future, and repeat.</p>
+            <p class="lead">"I respect the past, but what took us here won't take us there".</p>
           </div>
         </div>
       </section>
@@ -759,8 +759,8 @@
             <div class="slide-shell hero">
               <h1>A summary</h1>
               <ul class="tight">
-                <li class="fragment fade-up">Scale means traffic, data, uptime, teams, services, and long-lived change.</li>
-                <li class="fragment fade-up">The hardest design problems are often architectural, infrastructural, data-heavy, and organizational.</li>
+                <li class="fragment fade-up">Scale means traffic, data, uptime, many teams and services.</li>
+                <li class="fragment fade-up">The hardest problems are often architectural, infrastructural, data-heavy, and organizational.</li>
                 <li class="fragment fade-up">The only certainty is that today's decisions will age, and refactoring will eventually be necessary.</li>
                 <li class="fragment fade-up">Code design is still important but not the top 1 priority in large systems and that's fine.</li>
                 <li class="fragment fade-up">The goal is not timelessness, but the ability to keep changing.</li>
