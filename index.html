@@ -544,6 +544,15 @@
       <section class="deck-slide theme-tension">
         <div class="slide-frame">
           <div class="slide-shell hero">
+            <h1>Wait, but isn't the architecture implemented by the code?</h1>
+            <p class="lead">Yes, but changing code is "easy", defining the strategy so that you don't break production is the hard part.</h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="deck-slide theme-tension">
+        <div class="slide-frame">
+          <div class="slide-shell hero">
             <h1>Every architectural decision expires.</h1>
             <p class="lead">The real question is how and when it will age.</p>
           </div>
@@ -592,11 +601,11 @@
         </div>
       </section>
 
-      <section class="deck-slide theme-signal">
+      <section class="deck-slide theme-systems">
         <div class="slide-frame">
           <div class="slide-shell hero">
-            <h1>Identifying what's bad isn't hard.
-            Changing the software without stopping the world is.</h1>
+            <h1>Operational metrics help identify what's not working from an architectural point of view.</h1>
+            <p class="lead">Even more so than any code metrics.</p>
           </div>
         </div>
       </section>
@@ -705,7 +714,7 @@
         <div class="slide-frame">
           <div class="slide-shell hero">
             <h1>Accept that "good enough" is good enough.</h1>
-            <p class="lead">No code survives the test of time, so why overengineer it?</p>
+            <p class="lead">No code survives the test of time, only overengineer it if you have a concrete need.</p>
           </div>
         </div>
       </section>
@@ -760,9 +769,9 @@
               <h1>A summary</h1>
               <ul class="tight">
                 <li class="fragment fade-up">Scale means traffic, data, uptime, many teams and services.</li>
-                <li class="fragment fade-up">The hardest problems are often architectural, infrastructural, data-heavy, and organizational.</li>
+                <li class="fragment fade-up">The hardest problems are often about architecture, infrastructure, data.</li>
                 <li class="fragment fade-up">The only certainty is that today's decisions will age, and refactoring will eventually be necessary.</li>
-                <li class="fragment fade-up">Code design is still important but not the top 1 priority in large systems and that's fine.</li>
+                <li class="fragment fade-up">Code design is still important but simplicity is king.</li>
                 <li class="fragment fade-up">The goal is not timelessness, but the ability to keep changing.</li>
               </ul>
             </div>
